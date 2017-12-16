@@ -1,0 +1,64 @@
+//$imgSrc:'../scripts/pwdBox/../directive/pwdBox/img/';
+.key_pass .over-layer {width: 100%;height: 100%;position: absolute;left:0;top:0;z-index:999;
+	//background: rgba(0,0,0,.5);
+
+}
+.key_pass .key-box {position: absolute;left: 0;bottom: 0;width: 100%;background: #f7f7f7;}
+/*输入交易密码*/
+//.key_pass .deal-tits {position:relative;padding: .15rem 0;text-align: center;color: #333;font-size: .2rem;border-bottom: 1px solid #e7e7e7;}
+.key_pass .deal-tits {position:relative;padding: 13px 0;text-align: center;color: #333;font-size: 18px;border-bottom: 1px solid #e7e7e7;}
+.key_pass .d-closed {display:block;position: absolute;left: 10px;top: 50%;width: 36px;height: 36px;margin-top: -18px;
+//.key_pass .d-closed {display:block;position: absolute;left: .1rem;top: 50%;width: .4rem;height: .4rem;margin-top: -.2rem;
+	background: url(../directive/pwdBox/img/btn-closed-keyboard.png) no-repeat center center;
+	//-webkit-background-size: .23rem .23rem;
+	//background-size: .23rem .23rem;
+	-webkit-background-size: 21px 21px;
+	background-size: 21px 21px;
+}
+.key_pass .deal-password-box {position: relative;z-index: 10;}
+//.key_pass .deal-password {margin: 0 .2rem;margin-top: .25rem;border:1px solid #d7d6d6;background: #fafbfb;border-radius: 5px;}
+.key_pass .deal-password {margin: 22px 18px 0 18px;border:1px solid #d7d6d6;background: #fafbfb;border-radius: 5px;}
+//.key_pass .deal-password li {float: left; position: relative; width: 16.65%;height: .54rem;border-right: 1px solid #d7d6d6;box-sizing:border-box;}
+.key_pass .deal-password li {float: left; position: relative; width: 16.65%;height: 48px;border-right: 1px solid #d7d6d6;box-sizing:border-box;}
+//.key_pass .deal-password li:after {display:none;content: "";position: absolute;left: 50%;top: .2rem;z-index:11;margin-left: -0.075rem;width: .15rem;height: .15rem;-moz-border-radius: 2rem;border-radius: 2rem;background: #000;}
+.key_pass .deal-password li:after {display:none;content: "";position: absolute;left: 50%;top: 18px;z-index:11;margin-left: -6px;width: 14px;height: 14px;-moz-border-radius: 18px;border-radius: 18px;background: #000;}
+.key_pass .deal-password li:last-child {border:none;}
+.key_pass .deal-password li.z-on:after {display: block;}
+//.key_pass .forgot-psw {right: .2rem;top: 0;text-align: right;line-height: .6rem;font-size: .16rem;color: #1391e9;}
+.key_pass .forgot-psw {right: 18px;top: 0;text-align: right;line-height: 54px;font-size: 14px;color: #1391e9;}
+.key_pass .forgot-psw a {color: #1391e9;}
+//.key_pass .key-tips {margin: .2rem 0;text-align: center; font-size: 0;}
+.key_pass .key-tips {margin: 18px 0;text-align: center; font-size: 0;}
+//.key_pass .key-tips .locked {display: inline-block;padding-left: .2rem;font-size: .16rem;color: #c7c7c7;}
+.key_pass .key-tips .locked {display: inline-block;padding-left: 18px;font-size: 14px;color: #c7c7c7;}
+//.key_pass .key-tips .locked:before {content: "";position: absolute;left: 0;top: 50%;margin-top: -.09rem;width: .14rem;height: .18rem;
+.key_pass .key-tips .locked:before {content: "";position: absolute;left: 0;top: 50%;margin-top: -8px;width: 12px;height: 16px;
+	background: url(../directive/pwdBox/img/ico-locked.png) no-repeat;
+	-webkit-background-size: contain;
+	background-size: contain;
+}
+
+/*键盘输入*/
+.key_pass .keyboards {width: 100%;border-top:1px solid #f1f4f6;background: #fff;}
+//.key_pass .keyboards li {float: left;width: 33.333%;height:.65rem;text-align:center;box-sizing:border-box; font-size: .32rem;line-height: .65rem;color:#333;border:1px solid #f4f4f6;border-width: 0 1px 1px 0;overflow: hidden;}
+.key_pass .keyboards li {float: left;width: 33.333%;height:58px;text-align:center;box-sizing:border-box; font-size: 28px;line-height: 58px;color:#333;border:1px solid #f4f4f6;border-width: 0 1px 1px 0;overflow: hidden;}
+.key_pass .keyboards li:nth-child(3n) {border-right: none;}
+.key_pass .keyboards li.dropdown,.keyboards li.backspace {background: #e2e7ed;}
+.key_pass .keyboards li.backspace span {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: url(../directive/pwdBox/img/del.png) no-repeat center center;
+	//-webkit-background-size: .3rem .22rem;
+	//background-size: .3rem .22rem;
+	-webkit-background-size: 27px 20px;
+	background-size: 27px 20px;
+}
+.key_pass .pos-r {position: relative;}
+.key_pass .pos-a {position: absolute;}
+.key_pass .keyboards li.active {background: #d5d9df;}
+.key_pass .keyboards li.dropdown.active,.keyboards li.backspace.active {background: #e3e3e3;}
+.key_pass .pwd_loading{background: url(../directive/pwdBox/img/loading.gif) no-repeat center center; font-size: 18px; width: 100%; text-align: center; padding-top: 54px;}
+//.key_pass .pwd_loading{background: url(../directive/pwdBox/img/loading.gif) no-repeat center center; font-size: 0.20rem; width: 100%; text-align: center; padding-top: 0.6rem;}
+//.key_pass .loading-wrap .deal-tits{height: 0.2rem;}
+.key_pass .loading-wrap .deal-tits{height: 18px;}

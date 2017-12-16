@@ -1,0 +1,70 @@
+@charset "utf-8";
+/* Reset  create by AndyZhou     june-04-2013 14:30  contact 529892056@qq.com*/
+*,*:before,*:after{box-sizing: border-box;}
+html {
+  -webkit-text-size-adjust:none;
+  -webkit-user-select: none;
+  font-size: 62.5%;
+  -webkit-font-smoothing: antialiased;
+  height: 100%;
+  overflow: hidden;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, menu, nav, section { margin:0; padding:0; }
+article, aside, details, figcaption, figure, footer, header, menu, nav, section { display:block; }
+audio, canvas, video { display:inline-block; }
+body, button, input, select, textarea,button { font: 400 13px/1.5 Helvetica,STHeiti,"Roboto", "Segoe UI", sans-serif; }
+textarea { resize:none; overflow-y:auto; }
+img { border:0; vertical-align:middle; }
+iframe { display:block; }
+del { text-decoration:line-through; }
+ul,menu { list-style:none; }
+ol { list-style-position:inside; }
+h1, h2, h3, h4, h5, h6 {font-weight:400; }
+sub, sup { font-size:75%; line-height:0; position:relative; vertical-align:baseline; }
+sup { top:-0.5em; }
+sub { bottom:-0.25em; }
+a { text-decoration:none;color: #686e73;cursor: pointer;}
+a:hover { text-decoration: none; }
+i { font-style: normal;}
+table { border-collapse: collapse; border-spacing: 0; }
+object, :focus { outline: none; }
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after { content: ''; }
+img,a,button,input{ -webkit-touch-callout: none; }
+small{font-size: 1.2rem;}
+input,button{
+//input[type=text],input[type=tel],input[type=number],input[type=search],button{
+  -webkit-appearance: none;
+  border: none;
+  font-size: 1.5rem;
+  line-height: 34px;
+  padding: 0;
+  color: #333;
+}
+input[type=text],input[type=tel],input[type=number],input[type=search]{
+  padding: 7px 0;
+  line-height: 20px;
+  height: 34px;
+}
+body{
+  font-size: 1.4rem;
+  word-break: break-all;
+  -webkit-tap-highlight-color: transparent;
+  height: 100%;
+  overflow: hidden;
+  transform: translate3d(0,0,0);
+  color: #2b2a2a;
+  >.wrap{
+    z-index: 1;
+    padding-top: $headerHeight;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}
+form {
+  overflow-x: hidden;
+}
+
+//ios下空出状态栏高度
+body > .wrap.iOSHeader-padding {padding-top: 58px;}
+

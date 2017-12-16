@@ -1,0 +1,36 @@
+<input type="text" style="display: none"><!--ios键盘消失用的一个方法-->
+<head-title show-backbtn="false" go-back="goBack()" app-title="交易详情"></head-title>
+<div class="full-h bg-dark">
+    <div class="padding-divider2"></div>
+    <div class="padding2 tc moneyCls bg-default">
+        <img class="OK-img" src="images/ic_success.png" alt="">
+        <div class="pClsmi ">{{payName}}</div>
+        <div class="pClslg "><i>&yen;</i>{{amt}}</div>
+    </div>
+    <p class="padding-divider2"></p>
+    <div class="bg-default trade-info-text bt">
+        <div class="issue" ng-show="div04show">
+            <span class="input-label fl">收款方</span>
+            <span class="ws trade-merch">{{div04_payment}}</span>
+        </div>
+        <div class="issue" ng-show="div01show">
+            <span class="input-label fl">付款方式</span>
+            <span>{{div01_payment}}</span>
+        </div>
+        <div class="issue" ng-show="div02show">
+            <span class="input-label fl">提现至</span>
+            <span>{{div02_payment}}</span>
+        </div>
+        <div class="issue" ng-show="div03show">
+            <span class="input-label">到账时间</span>
+            <span>{{div03_payment}}</span>
+        </div>
+
+    </div>
+    <div class="card-show gap tc btn-bottom">
+        <button class="btn  lot-btn" ng-click="payFinishFunc()">
+            完成
+        </button>
+    </div>
+
+</div>

@@ -1,0 +1,36 @@
+/*  标题栏 边框修改  */
+.bar.bar-header{
+	border-style: none;
+	background-color:#{$stable};
+	height: 55px;
+}
+
+/*  标题样式  */
+.bar.bar-stable .title {
+	color: #{$font-color-input};
+	height: 55px;
+	line-height: 55px;
+}
+
+.has-header {
+	top: 55px;
+	background: #fff;
+}
+
+a {
+	text-decoration: none;
+}
+
+/*   标题栏  右侧样式   */
+.title.title-right {
+	font-size: 15px;
+}
+
+/*  "技术支持"提示文字  固定底部  */
+.footer-text {
+	position: absolute;
+	bottom: 9px;
+	width: 100%;
+	color: #999;
+	font-size: 13px;
+}

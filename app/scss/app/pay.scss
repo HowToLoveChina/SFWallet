@@ -1,0 +1,154 @@
+
+  /*顺手付标识*/
+.spay-ation span{
+  height: 18px;
+  display: inline-block;
+  background: url("../images/icon_logo.png") no-repeat;
+  background-size:18px 18px;
+  padding-left: 22px;
+}
+
+/*  验证、登陆账户页面  */
+.item-newinput{
+    margin: 0 4.2%;
+    padding: 14px 0 6px;
+    .input-label{
+        width: 80px;
+        padding-right: 2px;
+        font-size: 13px;
+    }
+    div {
+        width: 72%;
+        input{
+          padding-right: 0 !important;
+          font-size: 13px;
+        }
+    }
+}
+
+
+/*  顺手付收银台  or 微信支付  */
+.paymodel-money{
+  font-size: 34px;
+  color: #{$positive};
+}
+.pay-padding{
+  padding-top: 30px;
+  padding-bottom: 15px;
+}
+.paymodel-word{
+  color: #{$font-color-divider};
+}
+.paymodel-posi{
+  position: relative;
+  height: 20px;
+  color: #C9C9C9;
+  margin: 0 15px;
+}
+.paymodel-posi div{
+  height: 1px;
+  background: #DADADA;
+  position: absolute;
+  top: 9px;
+  width: 100%;
+  z-index: 0;
+}
+.paymodel-posi span{
+  display: inline-block;
+  margin: 0 auto;
+  position: relative;
+  z-index: 10;
+  padding: 0 25px;
+  background: #FFF;
+}
+.paymodel-list li{
+  height: 54px;
+  border: 0;
+  position: relative;
+}
+.bankname{
+  padding-left: 25px;
+}
+.paymodel-right{
+}
+.paymodel-list .paymodel-right{
+  color: #5A6A74;
+  position: absolute;
+  right: 8px;
+  top: 18px;
+}
+
+
+/*  支付列表  页面样式  */
+.paylist .item, .list-opacity .item {
+  height: 61px;
+}
+.paylist-m {
+  position: relative;
+}
+.paylist-m span{
+  color: #{$font-color-divider};
+}
+.add-bank{
+  line-height: 34px;
+  position: relative;
+  padding: 0 0 14px;
+  i {
+    font-size: 34px;
+    vertical-align: middle;
+  }
+  span {
+    color: #{$positive};
+    padding-left: 10px;
+  }
+  .ion-ios-arrow-right{
+    position: absolute;
+    right: 0;
+    font-size: 22px;
+  }
+}
+.list-opacity{
+  opacity:0.4;
+}
+.item-icon-left.item-icon-right .span-help .ion-ios-help-outline {
+    font-size: 22px;
+    position: absolute;
+    top: 14px;
+    left: 120px;
+    width: 30px;
+    padding-top: 6px;
+}
+
+/*  支付页面  */
+.item-payment {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  .ion-plus-circled {
+    left: 14px;
+    font-size: 30px;
+  }
+  .ion-ios-arrow-right {
+    right: 0;
+  }
+  img {
+    position: relative;
+    right: 12px;
+  }
+}
+.item-remark {
+  padding-left: 20px;
+  padding-top: 10px;
+  font-size: 13px;
+  color: #ccc;
+}
+
+.blanceQuota-view-detail {
+  display:-webkit-box;
+  display:box;
+  -webkit-box-pack:center;
+  -webkit-box-align:center;
+  -webkit-box-orient:vertical; 
+  background:rgba(0,0,0,.5)!important;
+  z-index:9999;
+}

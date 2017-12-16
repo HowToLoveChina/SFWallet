@@ -1,0 +1,28 @@
+
+.header{
+  @extend .box;
+  position: fixed;z-index: 900;top:0;left:0;width: 100%;line-height: $headerHeight;
+  -webkit-box-pack: justify;
+  color: #444;
+  //background: #efeff0  linear-gradient(0deg, #b2b2b2, #b2b2b2 50%, transparent 50%) left bottom no-repeat;
+  background: $bgDefault;
+  //background-size: 100% 1px;
+  border-bottom: 1px solid $borderColor;
+  >span{display: block;padding: 0 $leftSpace;min-width: 56px;}
+  h1{font-size: 1.7rem;color:#333;font-weight: 500; }
+  @at-root .btn-prev{font-size: 2.5rem;}
+  @at-root .btn-next{font-size: 1.5rem;font-weight: 500;}
+  @at-root .hide-header{margin-top: -$headerHeight!important;}
+  //@at-root .header-money{
+  //  background: $moneyHeaderBg;
+  //  color: #fff;
+  //}
+  @at-root .has-header{padding-top: $headerHeight;}
+  @at-root .no-padding{padding: 0!important;}
+}
+.header-n{
+  border-bottom: 1px solid #fff;
+}
+//iOS浮动式状态栏增加的高度
+.padding-header-top {padding-top: 14px;}
+

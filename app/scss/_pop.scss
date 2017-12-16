@@ -1,0 +1,246 @@
+#toast{
+  position: fixed;
+  //width: 80%;
+  top:50%;
+  left: 50%;
+  z-index: 999;
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  -o-transform: translate(-50%);
+  transform: translate(-50%);
+  min-height: 40px;
+  line-height: 40px;
+  margin-top: -20px;
+  padding: 0 11px;
+  text-align: center;
+  border-radius: 4px;
+  color: white;
+  font-size: 1.5rem;
+  background-color: #000;
+  -webkit-transform: tranform 400ms ease-in,opacity 300ms ease-in;
+  -moz-transform: tranform 400ms ease-in,opacity 300ms ease-in;
+  -ms-transform: tranform 400ms ease-in,opacity 300ms ease-in;
+  -o-transform: tranform 400ms ease-in,opacity 300ms ease-in;
+  transform: tranform 400ms ease-in,opacity 300ms ease-in;
+}
+.surplus{
+  color: #636161;
+  font-size: 1.4rem;
+  border-radius: 6px;
+  p{font-size: 1.4rem;}
+  h3{font-size: 2rem;color:#2b2a2a; }
+  .btn{line-height: 35px;font-size: 1.6rem;}
+}
+@mixin article-page {
+  position: fixed;
+  top:0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+
+  display:-webkit-box;
+  -webkit-box-pack:center;
+  -webkit-box-align:center;
+  -webkit-box-orient:vertical;
+}
+/*  弹出的带遮罩层的 半页面  */
+.pop {
+  @include article-page;
+  background:rgba(0,0,0,.5);
+  @at-root .bb_body2 {
+    background:#fff;
+    width: 90%;
+    padding: 20px 20px 0;
+    margin: auto;
+    >p{
+      margin-bottom: 10px;
+    }
+    @at-root .bb_buttons2 {
+      @extend .tc;
+      color: #2390ed;
+      line-height: 44px;
+      border-top: 1px solid $borderColor;
+      font-size: 1.4rem;
+    }
+
+  }
+}
+.pop-ios {top:14px;}
+/*  滑进滑出的 全页面 */
+.slide {
+  @include article-page;
+  background: #fff;
+}
+
+/* All styles below are for the default template. */
+.cg-busy-mask{
+  background: #fff;
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index: 98;
+  opacity: 0;
+}
+.cg-busy-default-wrapper {
+  text-align:center;
+  position: fixed;
+  top:50%;
+  left:50%;
+  margin-top: -17px;
+  margin-left: -17px;
+  z-index:99;
+}
+
+.cg-busy-default-sign{
+  position:relative;
+  z-index:1002;
+
+}
+
+.cg-busy-default-spinner{
+  & img{
+    width:35px;
+    height:35px;
+  }
+}
+.cg-busy-default-spinner div{
+  width:12%;
+  height:26%;
+  background:#000;
+  position:absolute;
+  left:44.5%;
+  top:37%;
+  opacity:0;
+  @include animation-all(cg-busy-spinner-anim 1s linear infinite);
+  @include border-radius(50px);
+  @include box-shadow(0 0 3px rgba(0,0,0,0.2));
+}
+
+
+.list-pop{
+  position: absolute;
+  //top:50%;
+  right: 0;
+  bottom: 0;
+  left:0;
+  height:252px;
+  background: #fafafa;
+  @at-root .list-header{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    @extend .box;
+    line-height: 50px;
+    border-bottom: 1px solid $borderColor;
+    padding:0 25px;
+    >div{min-width: 60px;}
+    .active{color: #444;}
+  }
+  @at-root .sle-item{
+    position: absolute;
+    height: 40px;
+    width: 100%;
+    top:131px;
+    left: 0;
+    background: $bgDefault;
+    border: 1px solid;
+    border-color: $borderColor transparent;
+  }
+  @at-root .list-body{
+    @extend .box;
+    padding-top: 50px;
+
+    @at-root .item-sc{
+      line-height: 40px;
+      color: #666;
+    }
+    .active{color: #333;}
+    .flex1{
+      border-right: 1px solid $borderColor;
+      &:last-of-type{border: none;}
+    }
+    &::-webkit-scrollbar-track-piece{
+      background-color:#fff;
+      -webkit-border-radius:0;
+    }
+    &::-webkit-scrollbar{
+      width:1px;
+      height:8px;
+    }
+    &::-webkit-scrollbar-thumb{
+      height:50px;
+      background:none;
+      outline:none;
+      border: none;
+    }
+    &::-webkit-scrollbar-thumb:hover{
+      height:50px;
+      background-color:transparent;
+      -webkit-border-radius:4px;
+    }
+
+  }
+}
+
+
+//  协议滑进样式
+.overlay-down {
+  position: fixed;
+  bottom: 0;
+  left: 3%;
+  width: 94%;
+  z-index: 1000;
+  overflow: hidden;
+}
+.page-up {
+  @include translate(0,0);
+}
+.page-down {
+  @include translate(0,100%);
+}
+//.page-up.transition,
+//.page-down.transition {
+//  transition: all 0.3s ease-in-out;
+//}
+.mask-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.3;
+  z-index: 99;
+}
+.protc-list {
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background-color: #fff;
+  margin-bottom: 10px;
+  font-size: 1.5rem;
+  .btm {
+    @include border-bottom($borderColor);
+
+  }
+}
+.btn-dark {
+  background: #fff;
+  color: #444;
+  font-size: 1.6rem;
+}
+.cancell {
+  margin-bottom: 10px;
+  .btn {
+    width: 100%;
+  }
+}
+
+

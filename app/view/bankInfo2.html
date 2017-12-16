@@ -1,0 +1,64 @@
+<!-- 填写银行卡信息2 -->
+<!-- <ion-view view-title="填写银行卡信息">
+	<ion-content> -->
+<head-title show-backbtn="true" go-back="goBack()" app-title="填写银行卡信息"></head-title>
+<form id="bankCardInfo2Form" name="bankCardInfo2Form" class="item form full-h oa">
+    <div class="card-show">
+        <div class="bank-info">
+            <img class="bank-icon" src="{{bankModel.iconUrl}}"/>
+            <div class="bank-name">{{bankModel.bankName}} {{bankModel.cardType == 'DEBIT'?'储蓄卡':'信用卡'}} ({{bankcardNumber |
+                subStrLast4}})
+            </div>
+        </div>
+        <div class="bank-info-tip" ng-show="bankModel.extraTips">
+            {{bankModel.extraTips}}
+        </div>
+    </div>
+
+    <!-- 动态字段 -->
+    <div ng-repeat="field in bankModel.dynamicFields">
+        <span class="input-label">{{field.title}}</span>
+        <input type="text"
+               placeholder="{{field.placeholder}}" name="{{field.fieldName}}" required
+               maxlength="{{field.maxLen}}"/>
+    </div>
+
+    <div>
+        <span class="input-label">手机号</span>
+        <input class="input-bg" type="tel" ng-model="obj.phoneNumber" value="obj.phoneNumber" placeholder="请输入银行预留手机号" maxlength="11"
+               ng-pattern="/\d{11}$/" required/>
+    </div>
+    <p class="space-little"></p>
+    <span class="checkbox">
+        <input type="checkbox" ng-model="obj.accept" required/>
+        <i>同意</i>
+        <a ng-click="openAgreementWindow()">《快捷支付服务协议》</a>
+        <a ng-click="openProtocal('withhold')" ng-if="notWithholdSign != 'Y' && !memberType">《委托扣款授权书》</a>
+        <a ng-click="openProtocal('withhold')" ng-if="contractType == 'BALANCE' && !memberType">《委托扣款授权书》</a>
+    </span>
+    <div class="gap tc" ng-if="!isFront">
+        <button class="btn btn-sub" ng-click="next()" ng-disabled="bankCardInfo2Form.$invalid">
+            下一步
+        </button>
+    </div>
+    <div class="gap tc" ng-if="isFront">
+        <button class="btn btn-sub" ng-click="next()" ng-disabled="bankCardInfo2Form.$invalid">
+            去{{bankModel.bankName}}页面
+        </button>
+    </div>
+</form>
+
+<article ng-class="showProtocal?'overlay-down transition page-up':'overlay-down transition page-down'"
+         ng-if="showProtocal">
+    <div class="protc-list">
+        <div class="padding tc tips btm" ng-click="openProtocal('quick')">
+            《快捷支付服务协议》
+        </div>
+        <div class="padding tc tips" ng-click="openProtocal('bank')">
+            《银行协议》
+        </div>
+    </div>
+    <div class="cancell">
+        <button class="btn btn-dark" ng-click="cancel()">取消</button>
+    </div>
+</article>

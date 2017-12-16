@@ -1,0 +1,235 @@
+//1027 不同商户主题色
+//.bg-suyun{
+//  background: #DC1E32;
+//}
+//.bg-weixin{
+//  background: #1B9D17;
+//}
+//.bg-sfpay{
+//  background: #288DFF;
+//}
+//wallet
+.moneyBg {
+  background: $moneyHeaderBg url('../images/mask.png') no-repeat;
+  background-size: 100%;
+  color: #fff;
+  min-height: 162px;
+}
+.moneyBgTop{
+  padding: 29px 0;
+  .pClslg{color:#fafd03;}
+}
+
+
+//1027  钱包余额信息 账户是否激活样式
+.unactivated {
+  color: #fff;
+  p {
+    font-size: 1.2rem;
+  }
+  button {
+    background: none;
+    color: #fff;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 0 12px;
+    line-height: 20px;
+    font-size: 1.2rem;
+  }
+}
+.balance-opacity {
+  opacity: 0.5;
+
+}
+.box-section {
+  height: 162px;
+  width: 100%;
+}
+.box-cell {
+  float: left;
+  width: calc(100%/3);
+  height: 81px;
+  @extend .tc;
+  background: #fff;
+  padding: 10px 0;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  .icon-font {
+    font-size: 2.5rem;
+    padding-bottom: 2px;
+  }
+}
+
+
+
+.pClssm {
+  font-size: 1.4rem;
+  line-height: 3.6rem;
+
+}
+
+.pClslg {
+  font-size: 36px;
+  line-height: 31px;
+
+}
+
+.withdraw {
+  color: #ff885a;
+}
+
+.recharge {
+  color: #51bbfd;
+}
+
+.safe {
+  color: #01c195;
+}
+.download {
+  color: $btnA;
+  padding: 16px 0;
+  margin-top: -16px;
+  font-size: 1.3rem;
+}
+.download2 {
+  a {color: $btnA;}
+  padding: 16px 5%;
+  font-size: 1.3rem;
+}
+.bank-color{color: #3894eb;}
+.packet-img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.group-input{
+  font-size: 1.5rem;
+  label{width: 44px;display: inline-block;float: left;}
+  line-height: 34px;
+  >div{
+    margin-left: 44px;
+    .inputWidth{width: 100%;border: none;text-align: left;}
+  }
+}
+.card-show {
+  padding: 16px 5%;
+  color: #686e73;
+  font-size: 1.2rem;
+  -webkit-box-align: center;
+  @at-root .bank-info {
+    @extend .box;
+    @at-root .bank-icon {
+      display: block;
+      width: 22px;
+      //height: 22px;
+      margin-right: 10px;
+      &, & ~ div {
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+    @at-root .bank-icon-large{
+      width: 34px;
+    }
+    @at-root .arrow-left {
+      color: #a7b0b9;
+      font-size: 18px;
+      line-height: 22px;
+    }
+    @at-root .bank-name {
+      font-size: 1.5rem;
+    }
+
+  }
+}
+
+.card-ensure {
+  font-size: 26px;
+  line-height: 26px;
+  color: $warnColor;
+  //margin-right: 20px;
+}
+
+.list-box {
+  margin: 0 5%;
+  border-bottom: 1px solid $borderColor;
+}
+
+.unit {
+  @extend .list-box;
+  padding: 14px 0;
+}
+
+.btn-detail {
+  padding: 0 5px 0;
+  color: $sbDesignerBlue;
+  font-size: 1.6rem;
+}
+
+// 交易详情  商户名称
+.trade-merch {
+  width: 70%;
+  display: inline-block;
+  vertical-align: middle;
+}
+.trade-remark {
+  line-height: 22px;
+}
+
+// paylist 余额支付不可用 置灰
+.list-opacity {
+  opacity: 0.4;
+}
+
+.RMB{
+
+  line-height: 1;
+  padding: 0 0 10px;
+  border-bottom: 1px solid $borderColor;
+  margin-bottom: 10px;
+  label{
+    font-size: 2.6rem;
+    vertical-align: bottom;
+    display:inline-block;
+    width: 8%;
+    height: 41px;
+    line-height: 46px;
+  }
+  input{
+    font-size: 4rem;
+    //vertical-align: bottom;
+    width: 80%;
+    text-align: left;
+    height: 46px;
+    line-height: 46px;
+    padding: 0;
+  }
+}
+
+.walletCashInput{
+  padding: 10px 5% 0px;
+  line-height: 22px;
+  border-bottom: 1px solid $borderColor;
+  overflow: hidden;
+  @extend .RMB;
+  .RMB{
+    margin-bottom: 0px;
+  }
+}
+
+//问号图标
+.qest-img {
+  position: relative;
+  width: 150px;
+  margin: 0 auto;
+  img {
+    width: 20px;
+    position:absolute;
+    right: 5px;
+    top: 0;
+  }
+  p, img {
+    display: inline-block;
+  }
+}

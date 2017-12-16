@@ -1,0 +1,10 @@
+<head-title show-backbtn="true" go-back="goBack()" app-title="输入支付密码"></head-title>
+
+<div class="full-h bg-dark">
+    <div class="issue bn font-tips">您正在使用钱包，请验证钱包6位数字支付密码</div>
+    <pwd-box wrapper=".pwd-wrapper" password="payPassword" inp-type="{{inpType}}" prompt-msg=""
+             on-finished="verifyPwd()"></pwd-box>
+    <div class="padding-divider">
+        <p class="tr tips font-small " ng-click="findPayPwdAccountFunc()">忘记支付密码？</p>
+    </div>
+</div>

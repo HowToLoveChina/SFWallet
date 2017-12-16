@@ -1,0 +1,50 @@
+<!-- <ion-view view-title="钱包充值">
+	<ion-content> -->
+<head-title show-backbtn="true" go-back="goBack()" app-title="银行卡详情"></head-title>
+<div class="full-h bg-dark">
+	<div class="card-bg">
+		<div class="card-front card-item">
+			<img class="bank-img" ng-src="{{item.icon}}" />
+			<div class="flex1">
+				<div class="justify">
+					<div >
+						<div>{{item.bankName}}</div>
+						<div class="card-type"  ng-if="item.type == 'QUICK'" >
+							<span ng-if="item.cardType == 'DEBIT'">储蓄卡</span>
+							<span ng-if="item.cardType == 'CREDIT'">信用卡</span>
+						</div>
+					</div>
+					<img class="quick-pay" src="images/icon_quickpay@3x.png"/>
+
+				</div>
+				<div class="card-no justify">
+					<div>****</div>
+					<div>****</div>
+					<div>****</div>
+					<div>{{item.cardNo | subStrLast4}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="padding-divider">
+		<div class="issue">
+			<div class="fl">单笔限额</div>
+			<div class="fr">{{item.oneQuota}}</div>
+		</div>
+		<div class="issue">
+			<div class="fl">单日限额</div>
+			<div class="fr">{{item.dayQuota}}</div>
+		</div>
+		<div class="issue">
+			<div class="fl">当月限额</div>
+			<div class="fr">{{item.monthQuota}}</div>
+		</div>
+	</div>
+	<div class="tc btn-gap" ng-click="unBindCardFunc()">
+		<div class="btn-del">
+			解绑银行卡
+		</div>
+	</div>
+
+</div>
+

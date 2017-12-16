@@ -1,0 +1,23 @@
+<head-title show-backbtn="true" go-back="goBack()" app-title="输入支付密码"></head-title>
+<div class="full-h">
+	<div class="card-show bg-dark" ng-click="listCardFunc()" ng-show="showCardFlag">
+		<div class="bank-info">
+			<div>
+				<img class="bank-icon" src="{{iconUrl}}" />
+				<div class="bank-name">{{bankName}}</div>
+			</div>
+			<div class="icon-font arrow-left">&#xe601;</div>
+		</div>
+	</div>
+	<div class="payMoney bg-default">
+		<div>
+			<span>支付金额：</span>
+			<i>{{amt}}元</i>
+		</div>
+	</div>
+	<div class="bg-default">
+		<pwd-box wrapper=".pwd-wrapper" password="payPassword" on-finished="verifyPwd()"></pwd-box>
+		<!-- <div class="issue bn tc font-tips">请输入顺手付支付密码</div> -->
+		<p class="tr download" style="padding: 10px 5%;margin-top: 0;width: 154px;float: right;" ng-click="findPayPwdAccountFunc()">忘记支付密码？</p>
+	</div>
+</div>

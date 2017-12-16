@@ -1,0 +1,51 @@
+<script type="text/template" id="js-template">
+    <div class="key_pass">
+        <div class="over-layer js-wrap">
+            <div class="key-box keyboard-wrap">
+                <div class="loading-context">
+                    <!-- 输入提示 -->
+                    <input ng-model="password" type="text" hidden="hidden"/>
+                    <p class="deal-tits">
+                        输入交易密码
+                        <span class="d-closed  btn-close"></span>
+                        <span   class="btn-forget forgot-psw pos-a">忘记密码？</span>
+                    </p>
+
+                    <ul class="deal-password div-context clearfix mgb3">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <div class="key-tips"><span class="locked pos-r">安全键盘</span></div>
+                    <!-- 键盘输入 -->
+                    <ul class="keyboards clearfix">
+                        <li class="btn-number" data-number="1">1</li>
+                        <li class="btn-number" data-number="2">2</li>
+                        <li class="btn-number" data-number="3">3</li>
+                        <li class="btn-number" data-number="4">4</li>
+                        <li class="btn-number" data-number="5">5</li>
+                        <li class="btn-number" data-number="6">6</li>
+                        <li class="btn-number" data-number="7">7</li>
+                        <li class="btn-number" data-number="8">8</li>
+                        <li class="btn-number" data-number="9">9</li>
+                        <li class="dropdown"></li>
+                        <li class="btn-number" data-number="0">0</li>
+                        <li class="backspace btn-backspace"><span></span></li>
+                    </ul>
+                </div>
+                <div class="loading-wrap" style="display:none;">
+                    <p class="deal-tits">
+                        <span class="d-closed btn-close"></span>
+                        <span style="line-height: 0.6rem;"></span>
+                    </p>
+                    <div class="pwd_loading mgt3">
+                        Loading...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</script>

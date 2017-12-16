@@ -1,0 +1,59 @@
+/*  更换代扣  */
+.bank-icon-big {
+  width: 50px;
+  height: 50px;
+  & + div {
+    font-size: 1.5rem;
+  }
+}
+.withhold-status {
+  color: #5cc1c9;
+  font-size: 1.2rem;
+}
+.withhold-chg{
+  -webkit-box-align: start!important;
+  color: #686e73;
+}
+.withhold-status2 {
+  margin-left: 36px;
+  color: #ccc;
+  font-size: 1.2rem;
+}
+
+
+/*  代扣详情  */
+.input-label4 {
+  @extend .input-label;
+}
+
+.wh-add-right {
+  color: #686e73;
+  line-height: 21px;
+  font-size: 1.5rem;
+}
+.wh-add-content {
+  @extend .wh-add-right;
+  margin-right: 26%;
+}
+.form .wh-add-declare {
+  @extend .wh-add-right;
+  padding: 8px 5%;
+  background-color: #e1e4e6;
+}
+.wh-add-icon {
+  &:after {
+    content: "\e601";
+    font-family: 'iconfont';
+    float: right;
+    font-size: 2rem;
+    color: #a7b0b9;
+  }
+
+}
+.bank-name-color {
+  color: #5e6c77;
+}
+.tr.tips a {
+  font-size: 1.3rem;
+  color: #2390ed;
+}

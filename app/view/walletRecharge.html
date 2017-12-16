@@ -1,0 +1,39 @@
+<!-- <ion-view view-title="钱包充值">
+	<ion-content> -->
+<head-title show-backbtn="true" go-back="goBack()" app-title="充值"></head-title>
+<form id="form"  name="form" novalidate ng-submit="rechargeFunc()" ng-show="showCardFlag" class="full-h oa bg-dark">
+	<div class="issue font-text">
+		<label>可用余额:</label>&nbsp;<span class="content-red">{{usableCount}} 元</span>
+	</div>
+	<div class="bg-default">
+		<div class="unit card-show bank-info " ng-click="listCardFunc()">
+			<div>
+				<img class="bank-icon-large bank-icon" src="{{iconUrl}}" />
+				<div>
+					<div class=" emphasis font-little">
+						{{bankName}}
+
+					</div>
+					<div class="content-red font-small">尾号{{cardNoSub}}</div>
+				</div>
+				<!---->
+			</div>
+			<div class="icon-font arrow-left">&#xe601;</div>
+
+		</div>
+
+		<div class="issue font-text group-input">
+			<label>金额</label>
+			<div><input name="inputRecharge" id="inputRecharge" class="inputWidth" type="text" ng-model="rechargeCount" ng-pattern="/^\d+(\.\d{1,2})?$/"  required placeholder="请输入充值金额"/></div>
+		</div>
+	</div>
+	<div class="issue font-small content-red bn">
+		{{remark}}
+	</div>
+
+	<div class="padding-divider gap tc">
+		<input type="submit" class="btn btn-sub lot-btn" ng-disabled="form.$invalid||rechargeCount*1<=0" value="充值" />
+	</div>
+</form>
+
+

@@ -1,0 +1,73 @@
+<!-- <ion-view view-title="钱包">
+<ion-content> -->
+<head-title   show-backbtn="true" go-back="goBack()" app-title={{headTitle}} ng-show="isShowFlag" theme="header-n"></head-title>
+<div class="full-h oa bg-dark" ng-show="isShowFlag" >
+	<!--<div ng-class="{'moneyBg tc padding bg-suyun':isSuyun, 'moneyBg tc padding bg-weixin':isWeixin, 'moneyBg tc padding bg-sfpay':isSfpay}" >-->
+	<div class=" tc padding moneyBg" >
+		<!--<span class="sprite sprite_home icon_wallet_home"></span>-->
+		<div ng-class="!isActivated ? 'balance-opacity' : 'moneyBgTop'"  ng-click="isActivated?surplus=true:surplus=false">
+			<div class="qest-img">
+				<p class="pClssm">可用余额(元)</p>
+				<img src="images/question.png" alt="" ng-show="isActivated">
+			</div>
+			<span class="pClslg">{{usableCount || '0.00'}}</span>
+		</div>
+		<div class="unactivated" ng-if="!isActivated">
+			<p class="padding-list">未实名支付账户，余额支付不可用</p>
+			<button ng-click="realNameFunc()">立即实名</button>
+		</div>
+		<!--&lt;!&ndash; 推荐顺手付理财引导 &ndash;&gt;-->
+		<!--<div class="tc download " ui-sref="download" ng-if="isActivated && isShowDownloadAppTips">-->
+			<!--<span ng-bind="downloadAppTips"></span>-->
+			<!--<span class="icon-font">&#xe601;</span>-->
+		<!--</div>-->
+	</div>
+	<div class="bg-default btm">
+		<a class="entry" ng-click="walletRechargeFunc()" >
+			<span class="icon-font withdraw">&#xe605;</span><span>充值</span>
+		</a>
+		<a class="entry " ng-click="walletCashFunc()" >
+			<span class="icon-font recharge">&#xe606;</span><span>提现</span>
+		</a>
+		<a class="entry " ng-click="redPacketFunc()" ng-if="serviceName == 'SY_MCH_OPEN_WALLET_REQ'">
+			<img class="packet-img" src="images/red-packet.png" alt=""><span>红包</span>
+		</a>
+		<a class="entry" ng-click="listCardFunc()" >
+			<span class="icon-font bank-color">&#xe60e;</span><span>银行卡</span>
+		</a>
+		<a class="entry " ng-click="tradeListFunc()" >
+			<span class="icon-font recharge">&#xe60f;</span><span>交易记录</span>
+		</a>
+		<a class="entry bn" ng-click="goSecurityHome()">
+			<span class="icon-font safe ">&#xe603;</span><span>支付安全</span>
+		</a>
+	</div>
+	<article ng-show="surplus" class="pop">
+		<section class="bb_body2 surplus padding-tp-btm">
+			<header class="tc padding-lf-rg btm">
+				<p>账户余额</p>
+				<h3>{{cashCount || '0.00'}}元</h3>
+			</header>
+			<div class="space-large padding-lf-rg">
+				<p>可用余额: {{usableCount}} 元</p>
+				<p class="space-small">冻结余额: {{freezeCount}} 元</p>
+			</div>
+			<div class="space-big padding-lf-rg">
+				<button class='btn btn-sub full-w' ng-click="surplus=false">确定</button>
+			</div>
+			
+		</section>
+	</article>
+	<!-- 推荐顺手付理财引导 -->
+	<!--<div class="tc download " ui-sref="download" ng-if="isShowDownloadAppTips">
+		<span ng-bind="downloadAppTips"></span>
+		<span class="icon-font">&#xe601;</span>
+	</div>-->
+	<p class="tc footer">
+		<span class="dis-block">PICC人保财险承保，为您的每一分钱保驾护航</span>
+		<span class="dis-block">The Wallet is provided by SF-Pay</span>
+	</p>
+</div>
+
+
+

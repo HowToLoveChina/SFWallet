@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>钱包</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(app) styles/app.css -->
+    <link rel="stylesheet" href="styles/app.css">
+    <!-- endbuild -->
+    <base href="/"/>
+</head>
+<body>
+<!--<img id="statistics" class="hidden" src="statistics/statistics.jpg"/>-->
+<section class="wrap" ui-view ng-class="{'no-padding':noTitle,'iOSHeader-padding':isIOS}"></section>
+<div id="toast" class="hidden"></div>
+<loading></loading>
+
+
+<script src="require.js" data-main="bootstrap"></script>
+
+
+</body>
+</html>
+
+

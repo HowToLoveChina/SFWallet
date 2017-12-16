@@ -1,0 +1,266 @@
+
+/*钱包余额p标签样式*/
+.moneyCls{
+	& .pClssm{
+	    color: #{$font-color-left};
+	    font-size: 15px;
+	    padding-top: 8px;
+	    padding-bottom:8px;
+	}
+	& .pClslg{
+		color: #2390ed;
+	    font-size: 36px;
+	    height: 30px;
+	    line-height: 30px;
+	    font-weight: 400;
+	    margin-bottom: -10px;
+	}
+	& .pClsmi{
+		color: #a7b0b8;
+	    font-size: 14px;
+	    margin: 0;
+	}
+	& .pClsStt {
+		font-size: 17px;
+	}
+}
+
+
+/*   钱包首页  样式   */
+#moneyHome {
+	color: #fff;
+	background: #288efc;
+	.button.button-icon:before {
+		color: #fff;
+	}
+	.title {
+		color: #fff;
+	}
+	& ~ div.scroll-content {
+		.scroll {
+			background: #f2f3f8;
+			.moneyCls{
+				border: none;
+				padding: 0;
+				.pClssm, .pClslg, .pClsmi{
+					color: #fff;
+				}
+				.moneyBg {
+					background: #288efc;
+
+					transform: translate(0,0);
+					transform-origin:50% 50%;
+
+					-webkit-transform: translate(0,0);
+					-webkit-transform-origin:50% 50%;
+					.pClssm {
+						font-size: 14px;
+					}
+				}
+			}
+			.list {
+				margin-top: -5px;
+				background: #fff;
+				.item-input {
+					margin: 1px 0 -1px 5%;
+					overflow: visible;
+					text-overflow: initial;
+					.bankIcon {
+						width: 22px;
+						height: 22px;
+					}
+					.ion-ios-arrow-right {
+						right: 5%;
+					}
+				}
+				& + div[ui-sref="download"] {
+					width: 100%;
+					text-align: center;
+					margin: 16px auto;
+					color: #0868c9;
+					font-size: 13px;
+					i {
+						display: inline-block;
+						width: 10px;
+						text-align: right;
+						vertical-align: -1px;
+						&:before {
+							color: #0868c9;
+							font-size: 15px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+/* svg样式 */
+.svg {
+	width: 100%;
+	height: 20px;
+	background: #fff;
+}
+
+/*  异常页面样式  */
+.exception-img {
+	width: 40%;
+	margin-top: 12%;
+}
+.exception-text {
+	margin:8% 5% 0;
+	font-size: 14px;
+	color: #999;
+	& + p.pClslg {
+		font-size: 28px;
+	}
+}
+
+/*支付金额文本框样式*/
+.text-center{
+	& .inputWidth{
+		margin-left:15%;
+		width:70%;
+		min-width:150px;
+		text-align:center;
+		border-bottom: 1px solid #2390ED;
+	}
+	& .pColor{
+		color: #f1484f;
+		font-size:12px;
+	}
+}
+
+/*去掉item样式表格边框*/
+.none-boder{
+	border:0px;
+}
+
+/*灰色背景*/
+.gray-bg{
+	background-color:#{$stable};
+}
+
+/*白色背景*/
+.item-divider.white-bg {
+	background: #fff;
+}
+
+/*忘记密码？*/
+.passwdClass{
+	font-size: 12px;
+    cursor: pointer;
+}
+
+/*去掉超链接下划线*/
+.noneDecoration{
+	text-decoration:none;
+}
+
+/**/
+.success-tip{
+	font-size: 77px;
+    color: #2390ED;
+}
+
+
+/*  缴纳保证金页面样式  */
+.depositAmount{
+	padding-top: 15px;
+}
+
+.depositAmount p:first-child{
+	color: #{$font-color-left};
+	font-size: 15px;
+}
+.depositAmount p:last-child{
+	font-size: 24px;
+	color: #f1484f;
+}
+
+/*  "忘记支付密码？"  样式修改  */
+.pwd-content + p{
+	color: #2390ed;
+}
+
+
+
+/*  字体大小、颜色修改  */
+textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+	font-size: 15px;
+	color: #333;
+	line-height: 20px;
+}
+
+/*    支持银行卡文字大小   */
+.text-right a {
+	font-size: 13px;
+}
+
+/*  实名认证确认  页面  */
+.auth-main {
+	padding: 30px 0;
+	border: none;
+	.user-msg {
+		color: #686e73;
+		font-size: 15px;
+		padding-top: 12px;
+	}
+}
+
+
+/*  交易详情页面样式  */
+.item-divider.tradeDtl {
+	padding: 40px 0 14px;
+	background: #{$stable};
+	.trd-num {
+		font-size: 56px;
+		height: 56px;
+		line-height: 50px;
+		color: #5e6c77;
+  	}
+  	.trd-title {
+  		color: #919699;
+  		padding: 5px 0;
+  		font-size: 13px;
+  	}
+  	.trd-status {
+  		padding: 5px 0;
+  		label {
+  			font-size: 15px;
+  		}
+  		i {
+  			padding-right: 5px;
+  			vertical-align: middle;
+  			display: inline-block;
+  			&:before {
+  				font-size: 20px;
+  			}
+  			img {
+  				width: 25px;
+  				height: 25px;
+  			}
+  		}
+  	}
+  	& + .list .item-input {
+  		border: none;
+  		padding: 4px 0;
+  		.input-label {
+  			width: 80px;
+  		}
+  		i {
+	  		position: static;
+	  		white-space: pre-wrap;
+	  		width: 76%;
+	  	}
+  	}
+}
+.successColor {
+	color: #5cc1c9;
+}
+.ingColor {
+	color: #51be78;
+}
+.failureColor {
+	color: #d14a4c;
+}

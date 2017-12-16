@@ -1,0 +1,24 @@
+
+/* 动画一起写 */
+@mixin animation-all($animation...) {
+	-webkit-animation: $animation;
+	   -moz-animation: $animation;
+	    -ms-animation: $animation;
+	     -o-animation: $animation;
+			animation: $animation;
+}
+@mixin animation-delay($animation-delay) {
+  -webkit-animation-delay: $animation-delay;
+     -moz-animation-delay: $animation-delay;
+      -ms-animation-delay: $animation-delay;
+       -o-animation-delay: $animation-delay;
+          animation-delay: $animation-delay;
+}
+
+@mixin transform-all($val...) {
+  -webkit-transform: $val;
+  -moz-transform: $val;
+  -ms-transform: $val;
+  -o-transform: $val;
+          transform: $val;
+}

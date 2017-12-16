@@ -1,0 +1,27 @@
+<!-- <ion-view view-title="钱包">
+<ion-content> -->
+<head-title show-backbtn="true" go-back="goBack()" app-title="支付安全"></head-title>
+<div class="bg-dark full-h oa">
+	<div class="space-little"></div>
+	<div class="bg-default">
+		<a class="entry" ng-click="goUserAccount()">
+			<label class="input-label fl">
+				顺手付账号
+			</label>
+			<span class="fr" >{{userMobileView}}</span>
+		</a>
+		<a class="entry" ng-click="goRealNameBindcard()">
+			<label class="input-label">
+				实名认证
+			</label>
+			<span class="fr" ng-class="{true:'greenColor',false:'redColor'}[isAttestation]">{{realAuth}}</span>
+		</a>
+		<a class="entry" ng-click="goModifyPayPwd()">
+			修改支付密码
+		</a>
+		<a class="entry bn" ng-click="goFindPayPwd()">
+			找回支付密码
+		</a>
+	</div>
+
+</div>

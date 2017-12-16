@@ -1,0 +1,205 @@
+.item{
+  >div{
+    padding: 7px 5% 6px 0;
+    margin: 0  0 0 5%;
+    line-height: 22px;
+    border-bottom: 1px solid $borderColor;
+    &:last-of-type{
+      border: none;
+    }
+    &.btm:last-of-type {
+      @include border-bottom($borderColor);
+    }
+    h4{
+      font-size: 1.4rem;
+      color: #686e73;
+      margin-bottom: 2px;
+      .fr{
+        font-size: 1.7rem;
+        color: #333;
+      }
+    }
+    >p{color: #aeaeae;}
+  }
+  >p{
+    line-height: 42px;
+    font-size: 14px;
+    color: #919699;
+  }
+  h3{
+    padding: 8px 5%;
+    background: $bgDark;
+    color: #5e6c77;
+    font-size: 1.3rem;
+  }
+}
+.issue{
+  padding: 10px 5% 9px;
+  line-height: 22px;
+  border-bottom: 1px solid $borderColor;
+  overflow: hidden;
+}
+.form{
+  //color: #444;
+  >div{line-height: 36px;}
+  >h3{font-size: 1.4rem;}
+}
+@mixin input-label($wid) {
+  display: inline-block;
+  //color: $fcLeft;
+  font-size: 1.5rem;
+  & + i {
+    color: #919699;
+  }
+  width: $wid;
+}
+
+//  input-label2  ( security.scss 支付银行卡验证码 )
+//  input-label4  ( withhold.scss  代扣绑卡详情页面)
+.input-label{
+  @include input-label(90px);
+}
+.input-label3 {  // 收银台 登陆 输入手机号页面专用
+  @include input-label(80px)
+}
+
+.entry{
+  display: block;
+  font-size: 1.5rem;
+  position: relative;
+  margin-left:5%;
+  padding-right: 36px;
+  line-height: 48px;
+  border-bottom: 1px solid $borderColor;
+  @extend .ov;
+  .icon-font{
+    font-size: 2rem;
+    margin-right: 10px;
+  }
+  .fr{font-size: 1.4rem;}
+  &::after{
+    position: absolute;
+    top:0;
+    right: 3.8%;
+    line-height: 50px;
+    height: 100%;
+    content: "\e601";
+    font-family: 'iconfont';
+    float: right;
+    font-size: 2rem;
+    color: #a7b0b9;
+  }
+}
+.noAfter.entry::after {  //加 noAfter 去掉 entry 右侧箭头
+  content: "";
+}
+
+.inputWidth{
+  width: 70%;
+  min-width: 150px;
+  text-align: center;
+  border-bottom: 1px solid $borderColor;
+  &:-ms-input-placeholder{text-align: center;}
+  &:-webkit-input-placeholder{text-align: center;}
+
+}
+
+.payMoney{
+  padding-top: 15px;
+  text-align: center;
+  font-size: 1.5rem;
+  color: #686e73;
+  >p{
+    font-size: 2.4rem;
+    color: #f1484f;
+  }
+}
+//payment 支付页面
+.payMoney div{
+  padding-left: 5%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: left;
+  i {
+    font-size: 2.4rem;
+    color: #f1484f;
+  }
+}
+.tabs{
+  @extend .box;
+  >div{
+    -webkit-box-flex: 1;
+    flex: 1;
+    line-height: 48px;
+    border-bottom: 1px solid $borderColor;
+    //max-width: 150px;
+    position: relative;
+
+
+  }
+  .active{
+    &:before{
+      content: '';
+      display: block;
+      width: 36%;
+      height: 3px;
+      position: absolute;
+      left:0;
+      right: 0;
+      bottom: 0;
+      margin: 0 auto;
+      background:$contentRed;
+      z-index: 99;
+    }
+    //border-color:$contentRed ;
+  }
+}
+
+/*钱包余额p标签样式*/
+.moneyCls {
+  .payOk{
+    color: #69c002;
+    font-size: 6rem;
+    line-height: 1;
+    padding: 15px 0 15px;
+  }
+  .pClssm {
+    font-size: 1.4rem;
+    padding-top: 15px;
+    color: #818181;
+  }
+
+   .pClslg {
+    //color: #2390ed;
+    padding-top: 6px;
+    font-size: 2rem;
+    //height: 30px;
+    line-height: 1;
+    font-weight: 400;
+    //margin-bottom: -10px;
+  }
+
+  .pClsmi {
+    color: #a7b0b8;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+}
+
+//支付成功页面图标
+.OK-img {
+  width: 18%;
+  margin-bottom: 10px;
+}
+
+.ion-ios-checkmark-outline:before {
+  content: "";
+}
+
+/**/
+.success-tip {
+  font-size: 7.7rem;
+  color: #2390ED;
+}
+

@@ -1,0 +1,74 @@
+/*   button按钮宽度、类型修改   */
+.padding > .button.button-block:first-child {
+  margin: 0 auto;
+  width: 60%;
+}
+
+.button.button-block {
+	font-size:20px;
+	min-height: 43px;
+}
+
+.button.button-light{
+	border-color: #c8cacc;
+}
+
+
+
+
+/*  下一步button按钮增加上边距  */
+.margin{
+	margin-top:10%;
+}
+.margin2{
+	margin-top: 10px;
+}
+.margin3 {
+	margin-top: 50px;
+}
+.margin4 {
+	margin-top: 20px;
+}
+
+.padding{
+	padding:15px;
+}
+
+
+/*  checkbox按钮优化  */
+.checkbox{
+	padding:0;
+	font-size: 13px;
+}
+.checkbox input, .checkbox-icon {
+	display:inline-block;
+	width:16px;
+	height:16px;
+	top: 4px;
+}
+.checkbox input:checked:before, .checkbox input:checked + .checkbox-icon:before{
+	background: #f1484f;
+	border:none;
+}
+.checkbox input:after, .checkbox-icon:after{
+	top: 22%;
+  	left: 25%;
+  	width: 9px;
+  	height: 6px;
+}
+.checkbox i{
+	display:inline-block;
+	padding:0 4px;
+	color: #aeaeae;
+}
+
+
+/*  返回按钮  优化  */
+.bar .button.button-icon:before {
+	color: #{$font-color-left};
+	padding: 0 15px;
+}
+.ion-ios-arrow-right:before {
+	color: #a7b0b9;
+}
+

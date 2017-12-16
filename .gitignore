@@ -1,0 +1,36 @@
+
+    ickages #
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# logs and database #
+*.log
+*.sql
+*.sqlite
+
+# os generated files #
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-v100
+.Trashes
+ehthumbs.db
+.Thumbs.db
+
+# Build Systems #
+###################
+node_modules/
+bower_components/
+.sass-cache
+*.css.map
+build/
+dist/
+nclude       mime.types;
+    default_type  application/octet-stream;
+

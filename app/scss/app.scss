@@ -1,0 +1,48 @@
+//global
+@import "variate";
+//reset browser default style
+@import "reset";
+@import "mixins_ionic";
+
+
+// iconfont font
+@import "font";
+// header and footer
+@import "header";
+@import "footer";
+
+
+//base unit  style class
+@import "common";
+// common class
+@import "content";
+
+// css sprite combine images
+@import "sprite";
+
+//pwd-box style
+@import "_mixins_ionic";
+@import "password";
+
+//component style
+@import "pop";
+
+//bb-confirm  bb-alert style
+@import "bb_box";
+
+// pages style
+@import "pages/wallet";
+@import "pages/trade";
+@import "pages/security";
+@import "pages/accountErr";
+@import "pages/protocol";
+@import "pages/bind";
+@import "pages/withhold";
+
+@import "pages/cardList";
+
+@import "city";
+@import "../directive/pwdBox/keyPas";
+
+@import "media";
+

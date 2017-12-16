@@ -1,0 +1,172 @@
+
+
+.rel{position: relative;}
+.hidden{display: none!important;}
+.dis-block{display: block;}
+.sink{transform: translate3d(0,120%,0);opacity: 0;}
+.scroll-content{height: 100%;}
+.full-w{width: 100%!important;display: block;}
+.full-h{height: 100%;}
+.show{display: block;transform: translate3d(0,0,0);opacity: 1;}
+.tc{text-align: center;}
+.tr{text-align: right;}
+.vm{vertical-align: middle;}
+.fr{float: right;}
+.fl{float: left;}
+.ov{overflow: hidden;}
+.oa{overflow: auto;}
+.bg{background: $bg;}
+.bg-default{background: $bgDefault;}
+.bg-dark{background: $bgDark;}
+.space-none {margin-top: 0!important;}
+.space-big {margin-top: 20px!important;}
+.space-large{margin-top: 15px;}
+.space-little{margin-top: 8px!important;}
+.space-small{margin-top: 5px!important;}
+.btn-bottom {margin-bottom: 33px;}
+.gap{margin-top: 5%!important;}
+.space-lf{margin-left: 10px;}
+.font-small{font-size: 1.2rem;}
+.font-tips{font-size: 1.3rem;}
+.font-normal{font-size: 1.6rem;}
+.font-text {font-size: 1.5rem;}
+.font-little{font-size: 1.4rem;}
+.font-large{font-size: 1.8rem;}
+.font-big{font-size: 2rem;}
+.bn{border: none!important;}
+.flex1{
+  -webkit-box-flex: 1;
+  }
+.ws-nowrap {
+  white-space: nowrap;
+}
+.ws{
+  @extend .ws-nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+/***  checkbox 红色radio按钮  ***/
+.checkbox {
+  font-size: 1.3rem;
+  margin: 0 5%;
+  input {
+    line-height: 22px;
+    margin: 0;
+    &:before {
+      font-family: 'iconfont';
+      line-height: 18px;
+      font-size: 18px;
+      text-align: center;
+      color: #f1484f;
+      content: "\e60c";
+      background-color: #fff;
+    }
+    &:checked:before{
+      content: '\e60b';
+    }
+  }
+  i {
+    display: inline-block;
+    padding: 0 4px;
+    color: #aeaeae;
+  }
+  a {
+    color: $sbDesignerBlue;
+  }
+}
+
+.success-color {
+  color: $successColor;
+}
+.ing-color {
+  color: $ingColor;
+}
+.failure-color {
+  color: $failureColor;
+}
+.gray{color: #aeaeae;}
+.tips{color: $sbDesignerBlue;}
+.block{padding: 0 5%;}
+.content-red{color: $contentRed;}
+.divider-font{color: $fcDivider;}
+.tips-font {color: $fcTips;}
+.emphasis{color: $emphasis;}
+.bt{border-top: 1px solid $borderColor}
+.btm{border-bottom: 1px solid $borderColor}
+.box {
+  display: -webkit-box;
+  -webkit-box-pack:justify;
+  box-pack:justify;
+}
+.flex-box {
+  @include display-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.wrap{
+  position: static;
+  height: 100%;
+  overflow: scroll;
+}
+
+/***  button通用样式  ***/
+.btn{
+  color: #fff;
+  font-size: 1.7rem;
+  line-height: 40px;
+  width: 100%;
+  @include border-radius(4px);
+}
+.btn-sub{
+  background: $contentRed;
+
+  &:disabled{
+    opacity: .4;
+  }
+}
+.lot-btn{
+  border-radius: 4px;
+  background: #ff6c6a;
+  line-height: 40px;
+  text-align: center;
+  -webkit-appearance: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  width: 100%;
+}
+
+.padding{padding:15px;}
+.padding2 {padding: 30px;}
+.padding-lf-rg {padding: 0 20px;}
+.padding-tp-btm {padding: 20px 0!important;}
+.paddingTop-30{padding-top: 30px;}
+.padding-list{padding: 6px 0;}
+.padding-card{padding: 13px 0;}
+.padding-divider {padding: 7px 5%;}
+.padding-divider2 {padding: 4px 0;}
+.padding-input {padding: 7px 0!important;}
+
+/* loading动画 */
+@mixin animation-all($animation...) {
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  -ms-animation: $animation;
+  -o-animation: $animation;
+  animation: $animation;
+}
+@mixin animation-delay($animation-delay) {
+  -webkit-animation-delay: $animation-delay;
+  -moz-animation-delay: $animation-delay;
+  -ms-animation-delay: $animation-delay;
+  -o-animation-delay: $animation-delay;
+  animation-delay: $animation-delay;
+}
+
+@mixin transform-all($val...) {
+  -webkit-transform: $val;
+  -moz-transform: $val;
+  -ms-transform: $val;
+  -o-transform: $val;
+  transform: $val;
+}

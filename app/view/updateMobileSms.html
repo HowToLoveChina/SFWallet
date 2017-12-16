@@ -1,0 +1,17 @@
+<head-title show-backbtn="true" go-back="goBack()" app-title="更换手机号"></head-title>
+<form id="form" name="form" class="verify" novalidate>
+    <div class="item">
+        <div>验证码已发送至您的手机{{accountNumber}}</div>
+    </div>
+    <div class="unit">
+        <input class="dis-block" type="tel" ng-model="verifyCode" value="obj.validCode" placeholder="请输入短信验证码" maxlength="10"
+               required/>
+        <count-down times="60" if-send="sms_count_down" on-send="sendAgainFunc()" text="发送短信验证码"></count-down>
+    </div>
+
+    <div class="card-show gap tc">
+        <button class="btn btn-sub" ng-disabled="form.$invalid"
+                ng-click="validateSmsCodeFunc()">下一步
+        </button>
+    </div>
+</form>

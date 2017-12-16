@@ -1,0 +1,110 @@
+/*  绑卡成功页面  */
+.bind-success {
+  margin: 1px 5%;
+  text-align: center;
+  .icon-font {
+    font-size: 8rem;
+    color: $sbDesignerBlue;
+  }
+  p {
+    color: #666;
+    font-size: 14px;
+  }
+}
+
+/*  绑卡 info1  */
+.time-select {
+  width: 28%;
+}
+
+.input-middle {
+  width: 10%;
+}
+
+.bind-widget {
+  display: inline-block;
+}
+
+/*  国籍选择页面  */
+.ctry-search {
+  margin: 0;
+  padding: 7px 15px;
+  position: inherit;
+  top: 55px;
+  width: 100%;
+  background: #dfe2e6;
+  .search-btn {
+    padding: 0 6px;
+    border-radius: 7px;
+    height: 32px;
+    display: block;
+    background: #fff;
+    input {
+      height: 28px;
+      line-height: 28px;
+      padding-top: 5px;
+      padding-left: 5px;
+      width: 90%;
+    }
+  }
+}
+
+.country-list {
+  position: inherit;
+  top: 100px;
+  font-size: 1.5rem;
+  div p {
+    color: #444;
+    line-height: 34px;
+  }
+}
+.country-height {
+  height: calc(100% - 100px);
+}
+.letter {
+  position: fixed;
+  right: 0;
+  top: 101px;
+  height: calc(98% - 101px);
+  z-index: 120;
+  background: #fff;
+  overflow-y: scroll;
+  li {
+    padding: 5px 15px 0 7px;
+    text-align: center;
+    color: #2390ed;
+    font-size: 1.3rem;
+  }
+}
+
+//  长输入框  -- 证件名
+.lang-input {
+  width: 75%;
+}
+
+//绑卡输入信息框长度
+.input-long-bankadd {
+  width: 70%;
+}
+
+//  代扣绑卡 input背景修改
+.input-bg {
+  background: none;
+}
+
+//  绑定信用卡 输入信息 提示信息
+.bank-info-tip {
+  line-height: 18px;
+  color: #919699;
+}
+
+//  验证银行卡 输入验证码
+.input-height {
+  line-height: 38px;
+}
+
+//绑卡灰色标题头行高
+.bankAdd-textHg {
+  height: 21px;
+  line-height: 21px;
+}

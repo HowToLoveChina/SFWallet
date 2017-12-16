@@ -1,0 +1,136 @@
+	
+/* 弹出窗 */
+.bb_mask{
+  position: fixed;
+  top:0;
+  left:0;
+  z-index:98;
+  width:100%;
+  height:100%;
+  background-color: #000;
+  opacity: 0.5;
+}
+.bb_box{
+  position: fixed;
+  top:50%;
+  left:50%;
+  z-index:99;
+  width:300px;
+  // height: 140px;
+  margin-top:-70px;
+  margin-left: -150px;
+  background-color: #fff;
+  @include border-radius(10px);
+}
+.bb_body{
+  // height:96px;
+  .bb_content{
+    margin: 15px;
+    text-align:center;
+    line-height: 30px;
+  }
+}
+.bb_buttons{
+  height:44px;
+  .bb_button{
+    display:inline-block;
+    width:50%;
+    height:43px;
+    border:none;
+    background:none;
+    color:#2390ed;
+    border-top:1px solid #{$border-color};
+    text-align:center;
+    line-height: 44px;
+    font-size:1em;
+    @include box-sizing(border-box);
+  }
+  .bb_button:disabled{
+    color:#999;
+  }
+  .bb_ok{
+    border-left:1px solid #{$border-color};
+    float:right;
+  }
+}
+.bb_alert{
+	.bb_buttons{
+		.bb_ok{
+			width:100%;
+			border-left:none;
+		}
+	}
+}
+.bb_box.bb_position{
+  top: 25%;
+  left: 10%;
+  width: 80%;
+  height: 50%;
+}
+
+/*  充值查看详情页面  */
+#bb_detail, #bb_detail_pay {
+    display:-webkit-box;display:box;
+    -webkit-box-pack:center;
+    -webkit-box-align:center;
+    -webkit-box-orient:vertical; 
+    background:rgba(0,0,0,.5)!important;
+    z-index:9999;
+    .bb_body {
+        background:#fff;
+        width: 90%;
+        padding-top: 20px;
+        .bb_content {
+            margin: 0 20px;
+            text-align:left;
+            line-height: 24px;
+            .centent_red {
+                color: red;
+            }
+        }
+        .bb_button {
+            width: 100%;
+            height: 50px;
+        }
+    }
+}
+
+/*    协议弹出页面  样式    */
+.mask-layer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0.3;
+    z-index: 99;
+}
+.list.button {
+    z-index: 50;
+    width: 100%;
+    padding: 0;
+    background: #fff;
+    .item {
+      font-size: 15px;
+      &:first-child {
+          margin-top: 5px;
+          padding: 0 5px 5px;
+          border-color:transparent transparent #ddd transparent;
+      }
+      &:last-child {
+          margin-bottom: 5px;
+          padding: 5px 5px 0;
+          border-color:#ddd transparent transparent transparent;
+      }
+      a {
+          width: 100%;
+          display: inline-block;
+      }
+    }
+}
+.button.button-dark.button-clear {
+    width: 100%;
+    background: #fff;
+    margin-bottom: 10px;
+}

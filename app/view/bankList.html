@@ -1,0 +1,30 @@
+<head-title show-backbtn="true" go-back="goBack()" app-title="{{paylistTitle}}" style="position:fixed;"></head-title>
+<div class="full-h bg-dark oa">
+	<div class="card-item"  ng-repeat="item in paylist" ng-click="item.button_clicked || selectFunc($index)" ng-disabled="item.button_clicked" ng-class="item.button_clicked?'list-opacity':''" style="background:#{{item.color}}">
+		<img class="bank-img" ng-src="{{item.icon1}}" />
+		<div class="flex1">
+			<div class="justify">
+				<div >{{item.bankName}}</div>
+				<div class="card-type">
+					<span ng-if="item.cardType == 'DEBIT'">储蓄卡</span>
+					<span ng-if="item.cardType == 'CREDIT'">信用卡</span>
+				</div>
+			</div>
+			<div class="card-no justify">
+				<div>****</div>
+				<div>****</div>
+				<div>****</div>
+				<div>{{item.cardNo | subStrLast4}}</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="padding-divider gap tc btn-bottom" ng-if="showCardFlag" ng-click="addBankCard()">
+		<button class="lot-btn">
+			添加银行卡
+		</button>
+	</div>
+</div>
+
+

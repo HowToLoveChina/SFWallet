@@ -1,0 +1,173 @@
+/* loading */
+// .cg-busy{
+//   position:absolute;
+//   top:0px;
+//   left:0px;
+//   right:0px;
+//   bottom:0px;
+//   z-index:1001;
+// }
+
+// .cg-busy-animation.ng-hide-add,
+// .cg-busy-animation.ng-hide-remove {
+//     @include transition(all .3s ease);
+//     display:block !important;
+// }
+// .cg-busy-animation.ng-hide-remove {
+//     opacity:0;
+//     @include translate(0px,-40px);
+// }
+// .cg-busy-animation.ng-hide-remove.ng-hide-remove-active {
+//     opacity:1;
+//     @include translate(0px,0px);
+// }
+// .cg-busy-animation.ng-hide-add {
+//     opacity:1;
+//     @include translate(0px,0px);
+// }
+// .cg-busy-animation.ng-hide-add.ng-hide-add-active {
+//     opacity:0;
+//     @include translate(0px,-40px);
+// }
+
+// .cg-busy-backdrop {
+//   background-color:white;
+//   opacity:.7;
+// }
+
+// .cg-busy-backdrop-animation.ng-hide-add,
+// .cg-busy-backdrop-animation.ng-hide-remove {
+//     @include transition(opacity .3s ease);
+//     display:block !important;
+// }
+
+// .cg-busy-backdrop-animation.ng-hide {
+//   opacity:0;
+// }
+
+/* All styles below are for the default template. */
+.cg-busy-mask{
+  background: #fff;
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index: 98;
+  opacity: 0;
+}
+.cg-busy-default-wrapper {
+  text-align:center;
+  position: fixed;
+  top:50%;
+  left:50%;
+  margin-top: -17px;
+  margin-left: -17px;
+  z-index:99;
+}
+
+.cg-busy-default-sign{
+  //display: inline-block;
+  position:relative;
+  z-index:1002;
+  //padding-bottom: 6px;
+  //color:#333333;
+  
+}
+// .cg-busy-default-text{
+//   margin:13px 12px 6px 49px;
+//   font-size:16px;
+//   color:#555;
+//   text-align: left;
+//   max-width: 400px;
+// }
+.cg-busy-default-spinner{
+  //background: #000;
+  //opacity: .7;
+  //border: 1px solid #000;
+  //border-radius: 5px;
+  //height: 60px;
+    & img{
+      //position:absolute;
+      width:35px;
+      height:35px;
+      //display:inline-block;
+      //top:12px;
+      //left:14px;
+    }
+}
+.cg-busy-default-spinner div{
+  width:12%;
+  height:26%;
+  background:#000;
+  position:absolute;
+  left:44.5%;
+  top:37%;
+  opacity:0;
+  @include animation-all(cg-busy-spinner-anim 1s linear infinite);
+  @include border-radius(50px);
+  @include box-shadow(0 0 3px rgba(0,0,0,0.2));
+}
+// .cg-busy-default-spinner div.bar1{
+//   // @include rotate(0deg);
+//   // @include translate(0, -142%);
+//   @include transform-all(rotate(0deg) translate(0, -142%));
+//   @include animation-delay(0s);
+// }
+// .cg-busy-default-spinner div.bar2{
+//   @include transform-all(rotate(30deg) translate(0, -142%));
+//   @include animation-delay(-0.9167s);
+// }
+// .cg-busy-default-spinner div.bar3{
+//   @include transform-all(rotate(60deg) translate(0, -142%));
+//   @include animation-delay(-0.833s);
+// }
+// .cg-busy-default-spinner div.bar4{
+//   @include transform-all(rotate(90deg) translate(0, -142%));
+//   @include animation-delay(-0.75s);
+// }
+// .cg-busy-default-spinner div.bar5{
+//   @include transform-all(rotate(120deg) translate(0, -142%));
+//   @include animation-delay(-0.667s);
+// }
+// .cg-busy-default-spinner div.bar6{
+//   @include transform-all(rotate(150deg) translate(0, -142%));
+//   @include animation-delay(-0.5833s);
+// }
+// .cg-busy-default-spinner div.bar7{
+//   @include transform-all(rotate(180deg) translate(0, -142%));
+//   @include animation-delay(-0.5s);
+// }
+// .cg-busy-default-spinner div.bar8{
+//   @include transform-all(rotate(210deg) translate(0, -142%));
+//   @include animation-delay(-0.41667s);
+// }
+// .cg-busy-default-spinner div.bar9{
+//   @include transform-all(rotate(240deg) translate(0, -142%));
+//   @include animation-delay(-0.333s);
+// }
+// .cg-busy-default-spinner div.bar10{
+//   @include transform-all(rotate(270deg) translate(0, -142%));
+//   @include animation-delay(-0.25s);
+// }
+// .cg-busy-default-spinner div.bar11{
+//   @include transform-all(rotate(300deg) translate(0, -142%));
+//   @include animation-delay(-0.1667s);
+// }
+// .cg-busy-default-spinner div.bar12{
+//   @include transform-all(rotate(330deg) translate(0, -142%));
+//   @include animation-delay(-0.0833s);
+// }
+
+// @-webkit-keyframes cg-busy-spinner-anim{
+//   from {opacity: 1;}
+//   to {opacity: 0.25;}
+// }
+// @-moz-keyframes cg-busy-spinner-anim{
+//   from {opacity: 1;}
+//   to {opacity: 0.25;}
+// }
+// @keyframes cg-busy-spinner-anim{
+//   from {opacity: 1;}
+//   to {opacity: 0.25;}
+// }

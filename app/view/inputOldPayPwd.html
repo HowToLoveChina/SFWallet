@@ -1,0 +1,8 @@
+<head-title show-backbtn="true" go-back="goBack()" app-title="修改支付密码"></head-title>
+<div class="full-h bg-dark">
+    <div class="issue bn font-tips">请输入原支付密码</div>
+    <!-- 密码控件 -->
+    <pwd-box wrapper=".pwd-wrapper" password="payPassword" inp-type="{{inpType}}" prompt-msg="请输入原支付密码"
+         on-finished="verifyPwd()"></pwd-box>
+    <!-- <p class="text-center"><a class="passwdClass noneDecoration" ng-click="findPayPwdAccountFunc()">忘记支付密码？</a></p> -->
+</div>

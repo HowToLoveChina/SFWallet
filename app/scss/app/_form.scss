@@ -1,0 +1,340 @@
+/*  文字下划线  */
+.item {
+	margin-top: -1px;
+	margin-bottom: 0;
+}
+.item-divider{
+	border-style:none;
+	padding-left:5%;
+	padding-right:5%;
+	background: #{$bg-color-divider};
+	color: #{$font-color-divider};
+	font-size: 13px;
+}
+
+.item-input{
+	padding: 7px 0 6px;
+ 	margin: 1px 5%;
+ 	border-style: none none solid none;
+ 	border-color: #{$border-color};
+ 	margin-top: 1px;
+ 	font-size: 15px;
+ 	background: #fff;
+}
+
+.bankIcon{
+	width:22px;
+	height:22px;
+	vertical-align: middle;
+}
+
+.bankIcon2{
+	width:50px;
+	height:50px;
+	vertical-align: middle;
+	position: absolute;
+}
+
+
+
+/*  支付完成  页面样式  */
+.input-label {
+	color: #{$font-color-left};
+	font-size: 15px;
+	width: 90px;
+}
+.input-label + i {
+	color: #919699;
+	position: absolute;
+	right: 0;
+	top: 14px;
+}
+.merchantEllipsis, .item-input.payOkMerchant i {
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 75%;
+}
+.item-input.payOkMerchant .input-label {
+	width: 85px;
+	& + i {
+		position: static;
+	}
+}
+
+/*  代扣内容  1+ 手机   兼容性样式设置  */
+span.withholdContent {
+	white-space: normal;
+	width:65%;
+	display: inline-block;
+	color: #333;
+}
+
+
+/*    代扣页面  样式    */
+.item-note {
+	font-size: 15px;
+	color: #{$font-color-left};
+}
+.item-icon-right {
+	color: #333;
+}
+
+
+/*   代扣详情页面   */
+.item.item-withhold {
+	margin: 20px 5%;
+	padding: 0;
+	border: none;
+	min-height: 50px;
+	.input-span {
+		padding-left: 65px;
+  		padding-right: 12%;
+		span {
+			padding: 3px 0;
+			display: block;
+			font-size: 15px;
+			color: #686e73;
+			white-space: pre-wrap;
+		}
+	}
+	.item-text-right{
+		font-size: 12px;
+		top: 6px;
+	}
+}
+.span-hint {
+	font-size: 12px;
+	color: #919699;
+}
+
+
+/*  银行卡身份信息  时间有效期  */
+.item-input .time-select{
+	width:28%;
+}
+
+.item-input .time-select input{
+	padding:0;
+	line-height:19px;
+}
+
+input[readonly]:not(.cloned-text-input){
+	background-color: transparent;
+}
+
+.input-middle{
+	width:10%;
+	display:inline-block;
+	line-height:17px;
+}
+
+input[type="text"][readonly] {
+  background-color: transparent;
+}
+
+
+
+/*  职业选择 半页显示  */
+.mobiscroll_class + input{
+	display:none;
+}
+.mobiscroll_class ~ label{
+	position:relative;
+	top:-38px;
+	width:230px;
+	height:36px;
+	display:block;
+}
+
+
+/*  银行卡列表 样式修改  */
+a.item.item-input.item-icon-left {
+	padding: 14px 33px;
+	font-size: 15px;
+	color: #{$font-color-left};
+	& i {
+		left: 0;
+		padding: 13px 0;
+	}
+}
+//添加银行卡按钮图标
+.chgpay_add_card {
+	padding-left: 64px;
+}
+
+/*  银行卡列表 储蓄&信用 选择  */
+.tabs {
+	position: static;
+	background: #fff;
+	.tab-item.active {
+		border-bottom: 2px solid #f1484f;
+		background-color: #fff;
+	}
+}
+		/*&:after{
+			content: '';
+			border-width: 6px;
+			border-style: solid;
+			border-color: transparent transparent #2390ed transparent;
+			position: relative;
+			top: 6px;
+			right: 28px;
+		}*/
+
+
+/*  支付密码页面  银行卡显示样式  */
+.item-icon-left .icon {
+	left: 30px;
+}
+
+.item-icon-right .icon {
+	right: 18px;
+}
+
+.item .itemBank {
+	color: #{$font-color-left};
+	height: 60px;
+	padding-left: 50px;
+	text-align: left;
+	line-height: 21px;
+	font-size: 15px;
+	i {
+		padding: 13px 0;
+	}
+	.ion-ios-arrow-right {
+		right: 5%;
+	}
+}
+
+
+/*  填写银行卡手机号页面info2  */
+.bankIcon + i {
+	vertical-align: middle;
+}
+
+
+/*  发送验证码  样式修改  */
+.verifyCode {
+	background-color: #fff;
+	margin-top: 20px;
+	padding-bottom: 0;
+	& p {
+		color: #ccc;
+		font-size: 13px; 
+	}
+}
+
+.item-input-inset {
+	border-bottom: 1px solid #{$border-color};
+	padding: 0;
+	& button {
+		text-align: right;
+		background: #fff;
+		float: right;
+		& i {
+			color: #2390ed;
+		}
+	}
+	& .button[disabled] {
+		opacity: 1;
+		& i {
+			color: #{$font-color-left};
+		}
+	}
+}
+
+.item-input-inset > p {
+	width: 50%;
+	float: right;
+}
+
+
+/*  发送银行预留手机号页面，银行卡标题样式修改  */
+.item-divider.verifyBankTel {
+	background: #fff;
+	padding: 15px 0;
+	margin: 0 5%;
+	border-bottom: 1px solid #{$border-color};
+	font-size: 15px;
+}
+
+/*   支付密码输入页面   */
+.item.none-boder.gray-bg {
+	font-size: 15px;
+	color: #{$font-color-left};
+}
+
+
+/*  账户余额不足 背景色调整  */
+.list a.item-icon-left {
+	background: #fff;
+}
+
+.item-text-right {
+	position: absolute;
+	padding-right: 0px;
+	right: 0px;
+	top: 15px;
+	color:#5cc1c9;
+}
+
+/*  国籍选择页面 样式  */
+.letter {
+	position: fixed;
+	right: 0;
+	top: 138px;
+	z-index: 9999;
+	background: #fff;
+	.list {
+		.item {
+			border: none;
+			//width: 5%;
+			padding: 0 15px 0 7px;
+			text-align:center;
+			a {
+				display: inline-block;
+	  			width: 15px;
+	  			font-size: smaller;
+			}
+		}
+	}
+}
+
+/*  .list的margin修改  */
+.list{
+	margin-bottom:10px;
+	padding: 0;
+}
+
+
+/*搜索框*/
+.list.list-inset.search{
+	margin: 0;
+	padding: 7px 15px;
+	position: inherit;
+	top: 55px;
+	width: 100%;
+	background: #dfe2e6;
+	.item-input {
+		padding: 0 6px;
+		border-radius: 7px;
+		height: 32px;
+		border-color: #c2c8cc;
+		margin-bottom: 0;
+	}
+}
+
+.has-header.country {
+	top: 102px;
+	span {
+		font-size: 15px;
+	}
+	.item-input {
+		background:	#fff;
+		p {
+			width: 100%;
+			padding: 7px 0;
+		}
+	}
+}

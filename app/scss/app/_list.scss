@@ -1,0 +1,37 @@
+/*  .list的margin修改  */
+.list{
+	margin-bottom:10px;
+  //background:#fff;
+}
+
+/*  交易列表  */
+.item-avatar {
+	padding: 9px 0;
+	min-height: 0;
+	margin: 0 5%;
+	border-color: transparent transparent #dfe2e5;
+  	h2 {
+  		color: #686e73;
+      span {
+        font-size: 14px;
+      }
+      i {
+        font-size: 17px;
+        color: #333;
+      }
+  	}
+  	p {
+  		color: #aeaeae;
+      font-size: 13px;
+  	}
+  	h2, p {
+  		position: relative;
+	  	vertical-align: middle;
+		line-height: 22px;
+		height: 22px;
+  		i {
+  			position: absolute;
+  			right: 0;
+  		}
+  	}
+}

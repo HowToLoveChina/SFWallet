@@ -1,0 +1,269 @@
+<!--填写身份信息-->
+<head-title show-backbtn="true" go-back="goBack()" app-title="填写身份信息"></head-title>
+<form id="form" name="form" class="item form" novalidate>
+    <h3>以下信息经加密处理，仅用于银行验证</h3>
+
+    <div>
+        <span class="input-label">姓名</span>
+        <span class="bank-name">{{obj.userName}}</span>
+    </div>
+    <div>
+        <span class="input-label">{{certTypeMessage}}</span>
+        <span class="bank-name">{{obj.certNumber | subStrForStar}}</span>
+    </div>
+    <div class="box">
+        <span class="input-label">证件有效期</span>
+
+        <div class="time-select">
+            <input type="text" ng-model="obj.startDate" ng-click="openDateScroll('start')" required placeholder="开始时间" readonly/>
+        </div>
+        <span class="bank-name input-middle">至</span>
+
+        <div class="time-select">
+            <input type="text" ng-model="obj.endDate" ng-click="openDateScroll('end')" placeholder="结束时间" readonly/>
+        </div>
+    </div>
+    <div ng-if="canSelectCountry">
+        <span class="input-label">国籍</span>
+        <input readonly type="text" id="country" name="country" ng-model="obj.country" ng-click="openCountryList()"
+               placeholder="请选择国籍"/>
+    </div>
+    <div ng-if="canSelectSex">
+        <span class="input-label">性别</span>
+
+        <div class="bind-widget">
+            <input id="sexId" ng-click="open('SEX')" type="text" ng-model="obj.sex" placeholder="男/女" readonly />
+        </div>
+    </div>
+    <div class="entry">
+        <span class="input-label">职业</span>
+
+        <div class="bind-widget">
+            <input id="staff" ng-click="open('STAFF')" type="text" ng-model="obj.staff" placeholder="请选择所处的行业" readonly />
+        </div>
+    </div>
+    <div class="entry">
+        <span class="input-label">目前住址</span>
+
+        <div class="bind-widget" id="cityStyle">
+            <input readonly type="text" id="city" name="city" ng-model="obj.curAddress" value="obj.curAddress"
+                   placeholder="省/市/区"/>
+        </div>
+    </div>
+    <div>
+        <span class="input-label">详细地址</span>
+        <input class="input-bg" type="text" ng-model="obj.detailAddress" value="obj.detailAddress" placeholder="请输入详细地址" required/>
+    </div>
+
+    <div class="card-show gap tc btn-bottom">
+        <button class="btn btn-sub" ng-click="next()" ng-disabled="form.$invalid || obj.curAddress==''">
+            下一步
+        </button>
+    </div>
+</form>
+<!-- 职业、性别列表 -->
+<scroll-component show='showScroll' list="scrollList" result="scrollResult" index="0"></scroll-component>
+<!-- 日期控件 -->
+<scroll-date-component></scroll-date-component>
+
+<!--国籍列表-->
+<article id="countryList" ng-class="showList?'slide':'slide hidden sink'">
+    <head-title show-backbtn="true" go-back="cancel()" app-title="选择国籍"></head-title>
+
+    <div class="ctry-search">
+        <label class="search-btn" for="searchKey">
+            <span class="icon-font">&#xe60d;</span>
+            <input type="search" ng-model="searchKey" id="searchKey" ng-change="search()" placeholder="搜索"/>
+        </label>
+    </div>
+
+    <div id="countryListDiv" class="country-list country-height full-w oa">
+        <div class="item">
+            <h3 id="A1">A</h3>
+
+            <div class="list-box" ng-repeat="cA in countrys.A">
+                <p data-id="A{{$index}}">{{cA}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="B1">B</h3>
+
+            <div class="list-box" ng-repeat="cB in countrys.B">
+                <p data-id="B{{$index}}">{{cB}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="C1">C</h3>
+
+            <div class="list-box" ng-repeat="cC in countrys.C">
+                <p data-id="C{{$index}}">{{cC}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="D1">D</h3>
+
+            <div class="list-box" ng-repeat="cD in countrys.D">
+                <p data-id="D{{$index}}">{{cD}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="E1">E</h3>
+
+            <div class="list-box" ng-repeat="cE in countrys.E">
+                <p data-id="E{{$index}}">{{cE}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="F1">F</h3>
+
+            <div class="list-box" ng-repeat="cF in countrys.F">
+                <p data-id="F{{$index}}">{{cF}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="G1">G</h3>
+
+            <div class="list-box" ng-repeat="cG in countrys.G">
+                <p data-id="G{{$index}}">{{cG}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="H1">H</h3>
+
+            <div class="list-box" ng-repeat="cH in countrys.H">
+                <p data-id="H{{$index}}">{{cH}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="J1">J</h3>
+
+            <div class="list-box" ng-repeat="cJ in countrys.J">
+                <p data-id="J{{$index}}">{{cJ}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="K1">K</h3>
+
+            <div class="list-box" ng-repeat="cK in countrys.K">
+                <p data-id="K{{$index}}">{{cK}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="L1">L</h3>
+
+            <div class="list-box" ng-repeat="cL in countrys.L">
+                <p data-id="L{{$index}}">{{cL}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="M1">M</h3>
+
+            <div class="list-box" ng-repeat="cM in countrys.M">
+                <p data-id="M{{$index}}">{{cM}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="N1">N</h3>
+
+            <div class="list-box" ng-repeat="cN in countrys.N">
+                <p data-id="N{{$index}}">{{cN}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="P1">P</h3>
+
+            <div class="list-box" ng-repeat="cP in countrys.P">
+                <p data-id="P{{$index}}">{{cP}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="Q1">Q</h3>
+
+            <div class="list-box" ng-repeat="cQ in countrys.Q">
+                <p data-id="Q{{$index}}">{{cQ}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="R1">R</h3>
+
+            <div class="list-box" ng-repeat="cR in countrys.R">
+                <p data-id="R{{$index}}">{{cR}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="S1">S</h3>
+
+            <div class="list-box" ng-repeat="cS in countrys.S">
+                <p data-id="S{{$index}}">{{cS}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="T1">T</h3>
+
+            <div class="list-box" ng-repeat="cT in countrys.T">
+                <p data-id="T{{$index}}">{{cT}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="W1">W</h3>
+
+            <div class="list-box" ng-repeat="cW in countrys.W">
+                <p data-id="W{{$index}}">{{cW}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="X1">X</h3>
+
+            <div class="list-box" ng-repeat="cX in countrys.X">
+                <p data-id="X{{$index}}">{{cX}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="Y1">Y</h3>
+
+            <div class="list-box" ng-repeat="cY in countrys.Y">
+                <p data-id="Y{{$index}}">{{cY}}</p>
+            </div>
+        </div>
+        <div class="item">
+            <h3 id="Z1">Z</h3>
+
+            <div class="list-box" ng-repeat="cZ in countrys.Z">
+                <p data-id="Z{{$index}}">{{cZ}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="letter">
+        <ul class="list">
+            <li class="item"><a href="javascript:;">A</a></li>
+            <li class="item"><a href="javascript:;">B</a></li>
+            <li class="item"><a href="javascript:;">C</a></li>
+            <li class="item"><a href="javascript:;">D</a></li>
+            <li class="item"><a href="javascript:;">E</a></li>
+            <li class="item"><a href="javascript:;">F</a></li>
+            <li class="item"><a href="javascript:;">G</a></li>
+            <li class="item"><a href="javascript:;">H</a></li>
+            <li class="item"><a href="javascript:;">J</a></li>
+            <li class="item"><a href="javascript:;">K</a></li>
+            <li class="item"><a href="javascript:;">L</a></li>
+            <li class="item"><a href="javascript:;">M</a></li>
+            <li class="item"><a href="javascript:;">N</a></li>
+            <li class="item"><a href="javascript:;">P</a></li>
+            <li class="item"><a href="javascript:;">Q</a></li>
+            <li class="item"><a href="javascript:;">R</a></li>
+            <li class="item"><a href="javascript:;">S</a></li>
+            <li class="item"><a href="javascript:;">T</a></li>
+            <li class="item"><a href="javascript:;">W</a></li>
+            <li class="item"><a href="javascript:;">X</a></li>
+            <li class="item"><a href="javascript:;">Y</a></li>
+            <li class="item"><a href="javascript:;">Z</a></li>
+        </ul>
+    </div>
+    <div id="searchResultList" class="country-list full-w oa">
+        <div class="item">
+            <div class="list-box" ng-repeat="re in searchResult">
+                <p>{{re}}</p>
+            </div>
+        </div>
+    </div>
+</article>

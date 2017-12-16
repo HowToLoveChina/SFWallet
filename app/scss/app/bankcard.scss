@@ -1,0 +1,114 @@
+.input-label2 {
+  display: table;
+  padding: 7px 10px 7px 0px;
+  max-width: 200px;
+  width: 20%;
+  color: #{$font-color-left};
+  font-size: 16px;
+}
+
+.row2{
+	display: -moz-flex;
+    display: flex;
+    padding: 0px;
+    width: 80%;
+    & p {
+      display: inline-block;
+      width: 50%;
+      padding: 12px 0 9px;
+    }
+    & input {
+      height: 18px;
+      line-height: 19px;
+      padding: 0;
+      margin: 4px 0;
+    }
+    button {
+      min-height: 48px;
+      line-height: 48px;
+      padding: 0;
+      position: absolute;
+      right: 0;
+    }
+    
+}
+
+.item-tip{
+	padding-left:5%;
+	padding-top: 2px;
+  color: #{$font-color-prompt};
+  font-weight: 500;
+  & p{
+    color: #{$font-color-prompt};
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+}
+.item-tip2{
+  padding-left:30px;
+  padding-top: 2px;
+  padding-bottom:15px;
+  color: #{$font-color-input};
+  font-weight: 500;
+  position: relative;
+  top: -9px;
+  z-index: 10;
+  & p{
+    color: #{$font-color-left};
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+}
+
+/*  城市选择  文字显示样式  */
+#cityStyle {
+  width: 68%;
+  input {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+}
+
+/*   支付安全页面  右侧箭头   */
+.arrow2.item-icon-right {
+  .right-text {
+      right: 20px;
+      top: 14px;
+      font-size: 14px;
+  }
+}
+
+.greenColor {
+    color: #02c461;
+}
+.redColor {
+    color: #f1484f;
+}
+
+.item-icon-right .ion-ios-arrow-right.icon {
+    right:0;
+    top: 2px;
+    font-size: 24px;
+    &:before {
+      width: 12px;
+    }
+}
+
+/*   右侧箭头  统一样式   */
+.arrow {
+  input {
+    padding: 0;
+    width: 102%;
+  }
+}
+
+/*  银行卡绑定成功 图标  */
+.bind_success_icon{
+    width: 100%;
+    .icon {
+      display: inline-block;
+      font-size: 100px;
+      height: 100px;
+    }
+}

@@ -1,0 +1,91 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+.sprite {
+  background-image: url(../images/sprite.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+//钱包首页  列表项图标
+.sprite_list {
+  width: 22px;
+  height: 22px;
+  background-size: 300px auto;
+}
+.icon_charge_icon {
+  background-position: 0 0;
+}
+.icon_deposit_icon {
+  background-position: -26px 0;
+}
+.icon_tradelist_icon {
+  background-position: -53px 0;
+}
+//交易详情  交易失败图标
+.sprite_middle {
+  background-size: 274px;
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+}
+.icon_failure {
+  background-position: 0px -25px;
+}
+//选中银行卡图标
+.icon_slected_bankcard {
+  background-position: -33px -25px;
+}
+//钱包首页  钱包图标
+.sprite_home {
+  width: 5rem;
+  height: 5rem;
+  border: 1px solid transparent;
+  border-radius: 3rem;
+  display: inline-block;
+  background-size: 262px;
+}
+.icon_wallet_home {
+  background-position: -183px 0;
+}
+//实名认证图标
+.sprite_account {
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  display: block;
+}
+.icon_attestation {
+  background-position: 0 -29px;
+  background-size: 132px;
+}
+//顺首付账户图标
+.icon_account {
+  background-position: -83px -48px;
+  background-size: 154px;
+}
+.icon_add_card {
+  background-position: -202px -75px;
+  background-size: 333px;
+  display: inline-block;
+  vertical-align: -5px;
+}
+.icon_logo {
+  background-position: -220px -92px;
+  background-size: 408px;
+  margin-right: 10px;
+}
+
+
+
+

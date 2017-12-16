@@ -1,0 +1,67 @@
+<!--<ion-view view-title="余额提现">
+	<ion-content> -->
+<head-title show-backbtn="true" go-back="goBack()" app-title="提现"></head-title>
+<form id="form" name="form" novalidate ng-submit="walletCashFunc()" ng-show="showCardFlag" class="full-h oa bg-dark">
+	<!--<div class="issue font-text">
+		<label>可用余额:</label>&nbsp;<span class="content-red">{{usableCount || '0.00'}} 元</span>
+	</div>-->
+	<div class="bg-default space-little">
+		<div class="issue card-show bank-info " ng-click="listCardFunc()">
+			<div>
+				<img class="bank-icon" src="{{iconUrl}}" />
+				<div>
+					<div class="bank-name">{{bankName}}</div>
+					<div class="content-red font-small">尾号{{cardNoSub}}</div>
+				</div>
+
+			</div>
+			<div class="icon-font arrow-left">&#xe601;</div>
+			<!--<div class="space-little" ng-click="listCardFunc()" ng-show="showCardRamark">-->
+			<!--{{remark}}-->
+			<!--</div>-->
+		</div>
+
+	</div>
+	<div class="bg-default space-little bt">
+		<div class="issue ">
+			<p class="font-text">提现金额</p>
+
+			<div class="RMB"><label class="tc">&yen;</label><input name="inputCash" id="inputCash" class="" type="text" ng-model="cashCountInput" ng-pattern="/^\d+(\.\d{1,2})?$/" required placeholder="0.00"/></div>
+			<div class="font-tips gray ov">
+				<div class="fl">
+					可用余额<span>{{usableCount || '0.00'}}</span>元
+					<span class="tips" ng-if="showDetail"  ng-click="viewDetail()">查看详情</span>
+				</div>
+				<div class="fr tips" ng-click="allCashFunc()">全部提现</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="issue font-small content-red bn">
+		{{remark}}
+	</div>
+
+
+	<div class="padding-divider gap tc">
+		<input type="submit" class="btn btn-sub lot-btn" ng-disabled="form.$invalid||cashCountInput*1<=0" value="提现" />
+	</div>
+
+</form>
+<!-- 查看详情 -->
+<div ng-class="showDetailDiv?'pop':'pop hidden'" ng-click="closeDetail()" >
+	<div class="bb_body2">
+		<p><b>为什么会余额支付(提现)额度不足？</b></p>
+		<p>根据人行规定，个人支付账户余额支付限制如下：</p>
+		<p class="centent_red">(银行卡快捷支付不受交易额度影响)</p>
+		<p>1、余额支付当日支付额度为{{dayCashAmount}}元;</p>
+		<p>2、您当前账户类别为{{accountLevel|accountLevelFilter}}，
+			<span ng-if="accountLevel=='FIRST_LEVEL'">余额支付与提现额度自开户起累计{{totalCashAmount}}元;</span>
+			<span ng-if="accountLevel!='FIRST_LEVEL'">年余额支付额度为{{yearCashAmount}}万元;</span>
+		</p>
+		<p><b>如何提升等级？</b></p>
+		<p>添加多张银行卡等方式可提升。</p>
+		<div class="bb_buttons2">
+			<div ng-click="addBankCard()">立即提升</div>
+		</div>
+	</div>
+</div>

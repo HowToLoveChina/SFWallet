@@ -1,0 +1,110 @@
+<head-title show-backbtn="true" go-back="goBack()" app-title="开通顺手付委托扣款服务"></head-title>
+<form id="form" name="form" class="form full-h oa" novalidate>
+    <div class="list-box padding-list">
+        <label class="input-label4">
+            代扣账号
+        </label>
+        <span class="wh-add-right">{{accountNumber}}</span>
+    </div>
+    <div class="list-box ws-nowrap padding-list">
+        <label class="input-label4">
+            商户名称
+        </label>
+        <span class="wh-add-right">{{commercialName}}</span>
+    </div>
+    <div class="list-box box padding-list">
+        <div class="input-label4">
+            代扣内容
+        </div>
+        <div class="wh-add-content">{{withholdContent}}</div>
+    </div>
+
+    <div class="wh-add-declare">
+		<span class="item" style="white-space:normal;" ng-if="!isBalance">
+		代扣优先从顺手付账户余额进行扣款,当余额不足时,将从所选的银行卡进行扣款。</span>
+		<span class="item" style="white-space:normal;" ng-if="isBalance">
+		开通后，商户委托扣款将从顺手付账户余额进行扣款。</span>
+    </div>
+    <div ng-class="isBalance?'list-box padding-list':'list-box padding-list wh-add-icon'" ng-click='selectDebitBankcard()'>
+        <span class="input-label4">付款方式</span>
+        <span ng-if="isBalance">账户余额</span>
+
+        <label ng-if="!isBalance">
+            <a ng-if="banklist.length==0" ng-click="addBankCard()">
+                <span class="sprite sprite_list icon_add_card"></span>
+                <span class="item-icon-right">添加银行卡</span>
+            </a>
+            <a ng-if="banklist.length!=0">
+                <img ng-src="{{bankModel.iconUrl}}" class="bank-icon"/>
+                <span class="item-icon-right">{{bankModel.bankName}} {{bankModel.cardType == 'DEBIT'?'储蓄卡':'信用卡'}} ({{bankModel.cardNo | subStrLast4}})<i
+                        class="icon ion-ios-arrow-right"></i></span>
+            </a>
+
+        </label>
+    </div>
+
+    <div class="checkbox">
+        <input type="checkbox" ng-model="obj.accept" required/>
+        <i>同意</i><a ng-click="openProtocal()">《委托扣款授权书》</a>
+    </div>
+
+    <div class="card-show gap tc btn-bottom">
+        <button class="btn btn-sub" ng-click="next()" ng-disabled="form.$invalid">
+            确定
+        </button>
+    </div>
+</form>
+
+<article ng-class="showBankcardList?'pop':'pop hidden sink'">
+    <head-title show-backbtn="true" go-back="cancel1()" app-title="选择付款方式"></head-title>
+    <div class="full-w has-header bg-default full-h oa">
+        <div class="item">
+            <h3>
+                本业务仅支持储蓄卡
+            </h3>
+        </div>
+        <div class="unit box" ng-click="selectedDebitBank($index)" ng-repeat="item in banklist">
+            <div>
+                <img class="bank-icon" ng-src="{{item.iconUrl}}"/>
+                <span class="bank-name bank-name-color">
+                    {{item.bankName}} {{item.cardType == 'DEBIT'?'储蓄卡':'信用卡'}} ({{item.cardNo | subStrLast4}})
+                </span>
+            </div>
+            <div class="icon-font card-ensure" ng-if="iconSelected==$index">&#xe609;</div>
+        </div>
+        <div class="tr list-box bn space-little tips">
+            <a ng-click="supportBankCard()">查看支持的银行</a>
+        </div>
+        <div class="card-show gap tc">
+            <button class="btn btn-sub" ng-click="addBankCard()" ng-disabled="form.$invalid">
+                使用新银行卡
+            </button>
+        </div>
+    </div>
+</article>
+
+<!-- 支持的银行列表 -->
+<article ng-class="supportBankList?'pop':'pop hidden sink'">
+    <head-title show-backbtn="true" go-back="cancel2()" app-title="支持银行卡"></head-title>
+    <div class="full-w has-header bg-default full-h oa">
+        <div class="tabs" ng-if="credits2.length>0">
+            <div ng-class="debitCardListTabActive?'active':''" ng-click="showDebitCardList()">储蓄卡</div>
+            <div ng-class="debitCardListTabActive?'':'active'" ng-click="showCreditCardList()">信用卡</div>
+        </div>
+        <div class="item" ng-if="credits2.length<=0">
+            <h3>
+                本业务仅支持储蓄卡
+            </h3>
+        </div>
+
+        <div class="unit card-show bank-info" ng-repeat="res in supportBankLists">
+            <img class="bank-icon" ng-src="{{res.iconUrl}}"/>
+
+            <div>
+                <div class="bank-name">
+                    <span>{{res.bankName}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</article>

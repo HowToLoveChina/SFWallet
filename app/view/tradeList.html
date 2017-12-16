@@ -1,0 +1,28 @@
+<head-title show-backbtn="true" go-back="goBack()" app-title="交易记录"></head-title>
+<div class="list full-h oa" ng-class="hasRecord?'':'hidden'">
+    <div id="testScroll" class="item"  ng-repeat="trade in tradeRecord">
+        <section class="issue">{{trade.month == thisMonth ? "本": trade.month}}月</section>
+        <div class="btm font-small" ng-click="goDetail(record.orderNo,record.tradeType)" ng-repeat="record in trade.tradeList">
+            <div class="ov">
+                <span class="fl font-little ">{{record.title}}</span>
+                <span class="fr">{{record.status.message}}</span>
+
+            </div>
+            <p class="ov">
+                <span class="fl">{{record.tradeTime | tradeTimeFunc}}</span>
+                <span class="fr"  ng-class="{true: 'content-red', false: 'tips'}[record.sign]">{{record.amount}}</span>
+            </p>
+        </div>
+    </div>
+    <div class="item tc" ng-if="pullUpLoading">
+        <div class="pullUpLabel">上拉加载更多...</div>
+    </div>
+</div>
+
+
+<div class="ex-w-m tc full-h" ng-if="!hasRecord">
+    <div class="padding-divider2 bg-dark"></div>
+    <img src="../images/starts.png" >
+    <!-- <div class="text-center" ng-if="hasListText"> -->
+    <span>近三个月内无交易记录</span>
+</div>

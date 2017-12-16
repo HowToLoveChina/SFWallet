@@ -1,0 +1,47 @@
+/*--- 页面滑动效果相关样式 ---*/
+.overlay {
+	position:fixed; 
+	top:0; 
+	left:0; 
+	right:0; 
+	bottom:0; 
+	z-index:20;
+	overflow-x:hidden; 
+	background:#FFFFFF;
+}
+.overlay-down {
+	position: fixed;
+	bottom: 0;
+	left: 3%;
+	width: 94%;
+	z-index: 1000;
+	overflow: hidden;
+}
+
+
+.page-left { 
+	@include translate3d(-100%,0,0);
+}
+.page-right {
+	@include translate3d(100%,0,0);
+}
+.page-center {
+	@include translate3d(0,0,0);
+}
+.page-up {
+	@include translate3d(0,0,0);
+}
+.page-down {
+	@include translate3d(0,100%,0);
+}
+.translating {
+	overflow:hidden;
+}
+.page-left.transition,
+.page-right.transition,
+.page-center.transition,
+.page-up.transition,
+.page-down.transition {
+	@include transition(all 0.3s ease-in-out);
+}
+

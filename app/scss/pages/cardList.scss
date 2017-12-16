@@ -1,0 +1,61 @@
+/**
+ * Author:AndyZhou
+ *   Date:9/26/16 
+ *  Email:zhoulujun@qq.cn
+ */
+.card-item{
+  display: -webkit-box;
+  -webkit-box-align: center;
+  border-radius: 6px;
+  background: #e75c5f;//不同银行卡显示不一样的颜色
+  margin: 12px 5%;
+  padding: 18px;
+  color: #fff;
+  font-size: 1.6rem;
+  @at-root .bank-img{
+    width: 42px;
+    height: 42px;
+    display: block;
+    margin:0 12px 0 0;
+  }
+  @at-root .justify{
+    display: -webkit-box;
+    -webkit-box-pack: justify;
+  }
+  @at-root .card-no{
+    font-size: 2.4rem;
+  }
+  @at-root .card-type{
+    font-size: 1.4rem;
+
+  }
+  @at-root .card-star{
+    font-size: 1.2rem;
+  }
+}
+.card-bg{
+  background: #5e6c77;
+  padding: 25px;
+  margin-bottom: 35px;
+  @at-root .card-front{
+      background: #edeef2;
+      color: #585b60;
+      padding: 18px  15px 25px;
+      margin-bottom: -51px;
+      border-radius: 6px;
+    -webkit-box-align: start;
+  }
+  @at-root .quick-pay{
+    height: 16px;
+  }
+}
+.btn-gap{
+  margin-top: 50px;
+}
+.btn-del{
+  font-size: 1.7rem;
+  padding: 8px 30px;
+  border-radius: 30px;
+  border: 1px solid #c4c8c9;
+  display: inline-block;
+}

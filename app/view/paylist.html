@@ -1,0 +1,60 @@
+<head-title show-backbtn="true" go-back="goBack()" app-title="{{paylistTitle}}" style="position:fixed;"></head-title>
+<div class="full-h oa">
+	<div class="unit card-show bank-info" ng-repeat="item in paylist" ng-click="item.button_clicked || selectFunc($index)" ng-disabled="item.button_clicked" ng-class="item.button_clicked?'list-opacity':''">
+		<!--快捷支付-->
+		<div ng-if="item.type == 'QUICK'">
+			<img class="bank-icon" ng-src="{{item.iconUrl}}" />
+			<div>
+				<div class="bank-name">
+					<span>{{item.bankName}}</span>
+					<span ng-if="item.cardType == 'DEBIT'">储蓄卡({{item.cardNo | subStrLast4}})</span>
+					<span ng-if="item.cardType == 'CREDIT'">信用卡({{item.cardNo | subStrLast4}})</span>
+				</div>
+				<div  ng-show="balanceShowFlag" class="span-hint" ng-if="item.availableQuota >= 0">
+					可用额度{{item.availableQuota | AvailableQuota}}元
+				</div>
+			</div>
+		</div>
+		<div  ng-if="item.type == 'BALANCE' || item.type == 'POINT'">
+			<img class="bank-icon" ng-src="{{item.iconUrl}}" />
+			<div>
+				<div class="bank-name">
+					<span>{{item.bankName}}</span>
+				</div>
+				<div class="ov">
+					<span>可用额度{{item.balance | AvailableQuota2}}</span>
+					<span class="icon-font btn-detail" ng-click="viewDetail($event)" ng-if="item.type == 'BALANCE' && (item.showDetail || !item.balance)" >&#xe602;</span>
+				</div>
+				<!-- 查看详情 -->
+
+			</div>
+		</div>
+		<div class="icon-font card-ensure"  ng-show="{{item.isShowSelect}}">&#xe609;</div>
+	</div>
+
+	<div class="card-show gap tc btn-bottom" ng-if="showCardFlag" ng-click="addBankCard()">
+		<button class="btn btn-sub">
+			添加银行卡
+		</button>
+	</div>
+</div>
+
+
+<!-- 查看详情 -->
+<div class="pop" ng-click="Iknow()" ng-if="showDetailDiv">
+	<div class="bb_body2">
+		<p><strong>为什么会余额支付(提现)额度不足？</strong></p>
+		<p>根据人行规定，个人支付账户余额支付限制如下：</p>
+		<p class="content-red">(银行卡快捷支付不受交易额度影响)</p>
+		<p>1、余额支付当日支付额度为{{dayCashAmount}}元;</p>
+		<p>2、您当前账户类别为{{accountLevel|accountLevelFilter}}，
+			<span ng-if="accountLevel=='FIRST_LEVEL'">余额支付与提现额度自开户起累计{{totalCashAmount}}元;</span>
+			<span ng-if="accountLevel!='FIRST_LEVEL'">年余额支付额度为{{yearCashAmount}}万元;</span>
+		</p>
+		<p><b>如何提升等级？</b></p>
+		<p>添加多张银行卡等方式可提升。</p>
+		<div class="bb_buttons2" ng-click="Iknow()">
+			知道了
+		</div>
+	</div>
+</div>

@@ -1,0 +1,102 @@
+<head-title show-backbtn="true" go-back="goBack()" app-title="代扣详情" finish-title="关闭"
+            finish-go="finishGo()"></head-title>
+<form id="form" name="form" novalidate class="full-h oa">
+    <div class="unit card-show bank-info withhold-chg">
+        <img ng-src="{{merchantIcon}}" class="bank-icon bank-icon-big"/>
+        <div>
+            <div class="bank-name">
+                <span>{{merchantName}}</span>
+            </div>
+            <div class="span-hint">签约时间：{{signTime}}</div>
+        </div>
+        <p class="withhold-status">{{status | withholdStatus}}</p>
+    </div>
+
+    <div class="item"><h3>付款方式</h3></div>
+    <div ng-if="hasBalance" class="unit">
+        <span class="sprite sprite_list icon_logo vm"></span>
+        <span class="input-label">账户余额</span>
+    </div>
+    <div ng-repeat="item in withholdWayList" class="list-box padding-list">
+        <div class="box padding-list withhold-chg">
+            <div>
+                <img ng-src="{{item.iconUrl}}" class="bank-icon" />
+                <span class="bank-name">{{item.bankName}} {{item.cardType=='DEBIT'?'储蓄卡':'信用卡'}} ({{item.cardNo | subStrLast4}})</span>
+            </div>
+            <!--<span class="withhold-status" style="font-size: 14px;" ng-click="change(item)">更换</span>-->
+        </div>
+        <p ng-if="item.type=='BANKCARD'" class="withhold-status2">
+            {{item.status | withholdStatus}} {{item.errMsg}}
+        </p>
+    </div>
+    <div class="input-label hidden">
+        <span class="positive ion-android-add-circle"></span>
+        <span ng-click="addBankCard()" class="item-text-right">添加银行卡</span>
+    </div>
+</form>
+
+<scroll-component></scroll-component>
+
+<article ng-class="showPayList?'pop':'pop hidden sink'" ng-if="showPayList">
+    <head-title show-backbtn="true" go-back="cancel()" app-title="选择付款方式"></head-title>
+
+    <div class="full-w has-header bg-default full-h oa">
+        <div class="unit box" ng-click="selectedDebitBank($index)"
+             ng-repeat="item in banklist">
+            <div>
+                <img ng-src="{{item.iconUrl}}" class="bank-icon"/>
+                <div class="bank-name bank-name-color">
+                    {{item.bankName}} {{item.cardType == 'DEBIT'?'储蓄卡':'信用卡'}} ({{item.cardNo | subStrLast4}})
+                </div>
+            </div>
+            <div class="icon-font card-ensure" ng-if="iconSelected==$index">&#xe609;</div>
+        </div>
+        <div class="unit" ng-click="addBankCard()">
+            <span class="sprite sprite_list icon_add_card vm"></span>
+            <span class="bank-name space-lf">使用新银行卡</span>
+        </div>
+        <div class="tr list-box bn space-little tips">
+            <a ng-click="supportBankCard()">查看支持的银行</a>
+        </div>
+        <div class="card-show gap tc">
+            <button class="btn btn-sub" ng-click="okChange()">确定</button>
+        </div>
+    </div>
+</article>
+
+<article ng-class="showCardList?'pop':'pop hidden sink'" ng-if="showCardList">
+    <head-title show-backbtn="true" go-back="cancel2()" app-title="支持银行卡"></head-title>
+
+    <div class="full-w has-header bg-default full-h oa">
+        <div class="tabs" ng-if="credits2.length>0" style="background: #fff;">
+            <span class="tab-item active" ng-click="showDebitCardList()">储蓄卡</span>
+            <span class="tab-item" ng-click="showCreditCardList()">信用卡</span>
+        </div>
+        <div class="item" ng-if="credits2.length<=0">
+            <h3>本业务仅支持储蓄卡</h3>
+        </div>
+        <div class="list" ng-if="debitCardListShow">
+            <a class="unit card-show bank-info" ng-repeat="res in debits2">
+                <img ng-src="{{res.iconUrl}}" class="bank-icon">
+                <div>
+                    <div class="bank-name" ng-bind="res.bankName"></div>
+                </div>
+            </a>
+        </div>
+        <div class="list" ng-if="!debitCardListShow">
+            <a class="unit card-show bank-info" ng-repeat="res in credits2">
+                <img ng-src="{{res.iconUrl}}" class="bank-icon">
+                <div>
+                    <div class="bank-name" ng-bind="res.bankName"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+</article>
+
+	
+
+
+
+
+

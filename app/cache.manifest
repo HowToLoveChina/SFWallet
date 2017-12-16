@@ -1,0 +1,28 @@
+CACHE MANIFEST
+# 2010-06-18:v1.0
+
+# Explicitly cached 'master entries'.
+CACHE:
+index.html
+style/app2.css
+angular.min.js
+angular-async-loader.min.js
+angular-ui-router.min.js
+app.js
+bootstrap.js
+crypto-js.js
+fastclick.js
+jquery.js
+require.js
+routes.js
+run.js
+# Resources that require the user to be online.
+NETWORK:
+*
+
+# static.html will be served if main.py is inaccessible
+# offline.jpg will be served in place of all images in images/large/
+# offline.html will be served in place of all other .html files
+FALLBACK:
+/main.py /static.html
+images/large/ images/offline.jpg

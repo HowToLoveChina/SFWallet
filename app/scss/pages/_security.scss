@@ -1,0 +1,97 @@
+/***  支付安全  ***/
+//顺手付账号
+.account_head {
+  font-size: 1.5rem;
+  color: $fcLeft;
+  padding: 40px 0 30px;
+  line-height: 30px;
+  text-align: center;
+  p {
+    @extend .space-little;
+    &:first-of-type {
+      padding-top: 10px;
+    }
+  }
+  //实名认证
+  & ~ .item {
+    @extend .box;
+    @extend .list-box;
+    line-height: 48px;
+    color: #919699;
+    & div {
+      line-height: 35px;
+      margin-left: 0;
+      border: none;
+      &:last-of-type {
+        color: #919699;
+      }
+    }
+  }
+}
+
+.promptText {  //  灰色提示文字基础样式
+  font-size: 1.3rem;
+  color: #ccc;
+}
+
+
+
+//发送验证码
+.verify {
+  .item { //提示文字
+    @extend .promptText;
+    margin-top: 20px;
+    div {
+      @extend .bn;
+    }
+  }
+  .unit { //验证码输入行
+    padding: 0;
+    @extend .box;
+  }
+  .button { //  发送验证码 button控件
+    min-width: 52px;
+    background: none;
+    color: #2390ed;
+  }
+  .button[disabled] {
+    color: #686e73;
+  }
+}
+
+//vertifyQuickPay  input
+.vtt {
+  vertical-align: text-top;
+}
+
+/***  账户等级  ***/
+.bb_body.hide-header {
+  position: absolute;
+  width: 100%;
+  div {
+    line-height: 25px;
+  }
+}
+
+/***  支付  验证银行卡 手机验证码  ***/
+.input-label2 {
+  display: table;
+  padding: 7px 10px 7px 0px;
+  color: #686e73;
+  font-size: 1.6rem;
+}
+.row2 {
+  @extend .flex-box;
+  padding: 0px;
+  width: 80%;
+  input {
+    width: 52%;
+  }
+}
+
+//交易详情 文字样式
+.trade-info-text {
+  .padding-trade {padding: 14px 5% 14px 0;}
+  .issue {padding: 14px 5% 13px;}
+}
+

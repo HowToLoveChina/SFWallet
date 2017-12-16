@@ -1,0 +1,20 @@
+<!-- <ion-view view-title="找回支付密码">
+	<ion-content padding="true"> -->
+<head-title show-backbtn="true" go-back="goBack()" app-title={{titleName}}></head-title>
+
+<form id="form" name="form" novalidate>
+    <label class="list-box padding-list dis-block">
+        <span class="input-label">姓名</span>
+        <input class="input-bg" type="text" required ng-model="userNameInUserInfo" placeholder="请输入姓名">
+    </label>
+    <label class="list-box padding-list ws-nowrap dis-block">
+        <span class="input-label">证件号码</span>
+        <input type="text" ng-model="cardId" class="lang-input input-bg" required maxlength='18'
+               placeholder="{{userCardTypeInfoPlacer}}">
+    </label>
+    <div class="card-show gap tc">
+        <button class="btn btn-sub" ng-disabled="form.$invalid"
+                ng-click="validateUserInfoFunc()">下一步
+        </button>
+    </div>
+</form>

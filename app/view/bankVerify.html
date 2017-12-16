@@ -1,0 +1,18 @@
+<head-title show-backbtn="true" go-back="goBack()" app-title="验证手机号"></head-title>
+<form id="form" name="form" class="verify" novalidate>
+    <div class="item space-none bg-dark">
+        <div class="tips-font">验证码已发送至您的银行预留手机号</div>
+    </div>
+
+    <div class="unit padding-input">
+        <input class="input-bg dis-block" type="tel" ng-model="obj.validCode" value="obj.validCode" placeholder="请输入短信验证码" maxlength="10"
+               required />
+        <count-down times="60" on-send="send()" if-send="autoSend" phoneNumber="" text="发送短信验证码"></count-down>
+    </div>
+
+    <div class="card-show gap tc">
+        <button class="btn btn-sub" ng-click="next()" ng-disabled="form.$invalid">
+            下一步
+        </button>
+    </div>
+</form>

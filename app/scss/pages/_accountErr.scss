@@ -1,0 +1,39 @@
+/*  异常页面样式  */
+.exception-img {
+  width: 40%;
+  margin-top: 12%;
+}
+
+.exception-text {
+  margin: 8% 5% 0;
+  font-size: 1.4rem;
+  color: #999;
+  >p{margin-bottom: 1rem;}
+}
+
+.exception-text + p.pClslg {
+  font-size: 2.8rem;
+  color: #2390ed;
+}
+
+.errDiv{
+  background-color: #fff;
+  height: 100%;
+  div {
+    background-color: #F1F2F9;
+    padding-top: 8px;
+  }
+  img {
+    width: 20%;
+    padding-top: 20%;
+    padding-top: 20%;
+    margin: 0 auto;
+    display: block;
+    max-width: 200px;
+  }
+  p {
+    text-align: center;
+    color: $emphasis;
+    font-size: 1.5rem;
+  }
+}

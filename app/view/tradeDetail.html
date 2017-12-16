@@ -1,0 +1,41 @@
+<head-title show-backbtn="true" go-back="goBack()" app-title="交易详情"></head-title>
+<div class="full-h bg-dark">
+    <div class="padding-divider2"></div>
+    <div class="padding tc moneyCls bg-default">
+        <div class="icon-font payOk">
+
+            <label ng-if="code == 'SUCCESS'">
+                <span class="icon-font">&#xe60b;</span>
+            </label>
+            <label class="ing-color" ng-if="code == 'PROCESSING'">
+                <span class="icon-font">&#xe604;</span>
+            </label>
+            <label class="failure-color" ng-if="code == 'FAILURE'">
+                <span class="icon-font">&#xe607;</span>
+                <!--<span class="sprite sprite_middle icon_failure"></span>-->
+            </label>
+        </div>
+        <div class="pClsmi ">{{title}}</div>
+        <div class="pClslg ">{{amount.slice(1)}}</div>
+        <p class="space-large"></p>
+    </div>
+
+    <p class="padding-divider2"></p>
+    <div class="item trade-info-text bg-default">
+        <div class="padding-trade" ng-if="tradeTime">
+            <label class="input-label">创建时间</label><span>{{tradeTime}}</span>
+        </div>
+        <div class="ws-nowrap padding-trade" ng-if="merchantName">
+            <label class="input-label">商户名称 </label><span class="ws trade-merch">{{merchantName}}</span>
+        </div>
+
+        <div class="padding-trade" ng-if="businessNo">
+            <label class="input-label">交易单号</label><span>{{businessNo}}</span>
+        </div>
+        <div class="padding-trade" ng-if="remark">
+            <label class="input-label">备注 </label><span>{{remark}}</span>
+        </div>
+    </div>
+
+</div>
+

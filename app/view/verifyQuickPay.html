@@ -1,0 +1,25 @@
+<!--验证银行卡-->
+<!-- <ion-view view-title="验证银行卡">
+	<ion-content> -->
+<head-title show-backbtn="true" go-back="goBack()" app-title="验证银行卡"></head-title>
+<form id="form" name="form" class="verify" novalidate>
+    <div class="bank-info padding-card list-box">
+        <img class="bank-icon" src="{{bankModel.iconUrl}}"/>
+        <div class="bank-name">{{bankModel.bankName}} {{bankModel.cardType == 'DEBIT'?'储蓄卡':'信用卡'}}
+            ({{bankModel.cardNo | subStrLast4}})
+        </div>
+    </div>
+    <div class="bank-info padding-list list-box">
+        <div class="box">
+            <span class="input-label2">验证码</span>
+            <input class="input-bg input-height vtt" type="tel" ng-model='obj.smsCode' placeholder="请输入短信验证码" maxlength="10" required/>
+        </div>
+        <count-down times="60" on-send="send()" if-send='sendFlag' phoneNumber="" text="发送短信验证码"></count-down>
+    </div>
+    <div class="list-box promptText bn">验证码已发送至您的银行预留手机号</div>
+    <div class="padding-divider gap tc">
+        <button class="btn  lot-btn" ng-click="next()" ng-disabled="form.$invalid">
+            下一步
+        </button>
+    </div>
+</form>

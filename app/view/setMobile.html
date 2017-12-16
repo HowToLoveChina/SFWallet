@@ -1,0 +1,25 @@
+<head-title show-backbtn="true" go-back="goBack()" app-title="设置预留手机号"></head-title>
+
+<form id="form" name="form" class="verify" novalidate>
+    <div class="bank-info padding-card list-box">
+        <img ng-src="{{iconUrl}}" class="bank-icon"/>
+        <i class="bank-name divider-font">{{bankName}}</i>
+    </div>
+    <div class="promptText list-box bn space-big padding-list">
+        <div>请再次确认您的银行预留手机号</div>
+    </div>
+    <div class="list-box">
+        <span class="input-label padding-card">手机号</span>
+        <input class="input-bg" type="tel" ng-model="obj.phoneNumber" maxlength="11" ng-pattern="/\d{11}$/" required
+               placeholder="请输入手机号码">
+    </div>
+    <div class="unit">
+        <input class="input-bg" type="tel" ng-model="obj.validCode" placeholder="请输入短信验证码" maxlength="10" required/>
+        <count-down times="60" if-send="sms_count_down" on-send="sendFunc()" text="发送短信验证码"></count-down>
+    </div>
+    <div class="card-show gap tc">
+        <button class="btn btn-sub" ng-disabled="form.$invalid"
+                ng-click="setMobileFunc()">下一步
+        </button>
+    </div>
+</form>
