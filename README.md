@@ -1,5 +1,3 @@
-# 涅槃项目－Html5 application #
-
 ## 环境准备 ##
 *   安装nodeJs,并设置好环境变量
 
@@ -11,7 +9,7 @@
 5.  启动本地服务器
     gulp serve 
 6.  构建代码（提供给测试或生产部署）
-        gulp build
+    gulp build
 
 
 ## 技术选型 ##
