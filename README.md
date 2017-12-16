@@ -70,3 +70,5 @@
         Link 指定新的符号链接名称。
         Target 指定新链接引用的路径 (相对或绝对)。
         mklink /D 某盘:\npm安装数据目录\node_modules（即npm install -g 全局安装的目录） 某盘:\项目文件夹\node_modules
+        
+        #仅供学习，禁止商业用途
